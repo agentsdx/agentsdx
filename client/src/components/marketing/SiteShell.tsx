@@ -1,6 +1,6 @@
 import { Menu, X, ArrowUpRight, Linkedin, Youtube } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaSnapchat, FaThreads, FaTiktok, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaSnapchat, FaTiktok, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { Link, useLocation } from "wouter";
 import { BrandMark } from "./BrandMark";
 import { configurePlatformCal } from "@/lib/calEmbed";
@@ -85,9 +85,9 @@ export function SiteFooter() {
             <div className="social-links" aria-label="agents DX social media">
               <a href="https://www.facebook.com/AgentsDXai" aria-label="agents DX on Facebook"><FaFacebookF /></a>
               <a href="https://www.instagram.com/AgentsDXai" aria-label="agents DX on Instagram"><FaInstagram /></a>
-              <a href="https://www.threads.net/@AgentsDXai" aria-label="agents DX on Threads"><FaThreads /></a>
               <a href="https://x.com/AgentsDXai" aria-label="agents DX on X"><FaXTwitter /></a>
               <a href="https://www.linkedin.com/company/agentsdxai" aria-label="agents DX on LinkedIn"><FaLinkedinIn /></a>
+              <a href="https://www.youtube.com/@AgentsDXai" aria-label="agents DX on YouTube"><FaYoutube /></a>
               <a href="https://www.tiktok.com/@AgentsDXai" aria-label="agents DX on TikTok"><FaTiktok /></a>
               <a href="https://www.snapchat.com/add/AgentsDXai" aria-label="agents DX on Snapchat"><FaSnapchat /></a>
               <a href="https://www.pinterest.com/AgentsDXai" aria-label="agents DX on Pinterest"><FaPinterestP /></a>

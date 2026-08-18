@@ -56,3 +56,6 @@
 - [x] Capture and review mobile renders for every Use Case detail route and the Academy page, then document and resolve any defects found.
 - [x] Capture and review desktop renders for Small Business and Startups, then record a complete desktop/mobile verification matrix for every new route.
 - [x] Add a route-by-route desktop/mobile verification matrix for every new Use Case and footer-linked page to the project documentation.
+- [x] Standardize the footer to the supplied @AgentsDXai social account set: Facebook, Instagram, X, LinkedIn, YouTube, TikTok, Snapchat, and Pinterest.
+- [x] Restore a consistent YouTube social icon and @AgentsDXai destination as explicitly re-authorised by the user.
+- [x] Update the public-link contract and verify the exact eight-icon social footer at desktop and mobile widths.

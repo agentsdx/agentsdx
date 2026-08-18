@@ -36,13 +36,14 @@ describe("Agents DX keyboard accessibility contract", () => {
     [
       "https://www.facebook.com/AgentsDXai",
       "https://www.instagram.com/AgentsDXai",
-      "https://www.threads.net/@AgentsDXai",
       "https://x.com/AgentsDXai",
       "https://www.linkedin.com/company/agentsdxai",
+      "https://www.youtube.com/@AgentsDXai",
       "https://www.tiktok.com/@AgentsDXai",
       "https://www.snapchat.com/add/AgentsDXai",
       "https://www.pinterest.com/AgentsDXai",
     ].forEach(url => expect(siteShell).toContain(url));
+    expect(siteShell).not.toContain("threads.net");
   });
 
   it("keeps the contact page wired to the supplied Cal.com platform booking flow", () => {

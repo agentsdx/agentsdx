@@ -37,6 +37,10 @@ The remaining mobile verification covered Agencies, E-commerce, Enterprise, Star
 
 The final desktop renders covered the Small Business and Startups routes. Together with the prior desktop and mobile capture sets, every new Use Case detail and footer-linked page has now been reviewed at both target breakpoints. No additional layout or navigation defects were identified.
 
+## Approved social-account refresh — 18 August 2026
+
+The footer now displays the exact user-authorised eight-platform `@AgentsDXai` set: Facebook, Instagram, X, LinkedIn, YouTube, TikTok, Snapchat, and Pinterest. The complete row was reviewed in full-page desktop and 390px mobile renders. The icon row remains visually balanced, recognisable, and comfortably tappable at the mobile breakpoint.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

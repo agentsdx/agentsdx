@@ -19,3 +19,7 @@ The links remain in the footer because the user explicitly supplied the shared a
 ## Correction applied
 
 The YouTube path returned `404 Not Found`, so its footer icon and destination were removed on 18 August 2026. The remaining platform icons use a consistent brand-icon set and retain the supplied account-handle paths pending confirmation of any profile that does not expose public content to anonymous visitors.
+
+## User-authorised account standard
+
+On 18 August 2026, the user explicitly authorised a consistent `@AgentsDXai` account set for **Facebook, Instagram, X, LinkedIn, YouTube, TikTok, Snapchat, and Pinterest**. The footer now presents exactly these eight recognisable platform icons and restores the `youtube.com/@AgentsDXai` destination under that approval. Threads is intentionally absent from the current approved set.

@@ -14,7 +14,7 @@
 - [x] Build a Contact / Book a Demo page with validated name, email, company, and message fields plus a non-functional calendar placeholder.
 - [x] Build an FAQ page with accessible category-grouped accordion questions and answers.
 - [x] Build a Blog / Resources index with article cards and an individual article detail route.
-- [ ] Build reusable testimonial/social-proof and logo-strip components without inventing customer reviews, ratings, quotes, or client logos.
+- [x] Build reusable testimonial/social-proof and logo-strip components without inventing customer reviews, ratings, quotes, or client logos.
 - [ ] Build a footer containing the Agents DX logo, navigation links, social icons, and exact "Privacy Policy" and "Terms of Service" legal links.
 - [x] Ensure all routes, components, interactive controls, and content layouts are mobile-responsive and keyboard-accessible.
 - [x] Add Vitest coverage for key route/content behavior and form validation.
@@ -26,3 +26,15 @@
 - [x] Run a full keyboard and visible-focus accessibility pass across every public route and interactive element.
 - [x] Capture and review mobile renders for Features, About, Resources, resource detail, Privacy Policy, and Terms of Service.
 - [x] Perform and document a route-by-route keyboard accessibility audit covering the header/mobile menu, CTAs, resource links, FAQ accordions, contact form, and footer/legal navigation; resolve any defects found.
+- [x] Apply the exact display brand name "agents DX" and the supplied tagline "Built to Engage. Trained to Convert." throughout the public experience.
+- [x] Update product positioning to "Your AI Workforce" and the supplied AI-agent platform capabilities without copying reference-site claims.
+- [x] Link social icons to the approved @AgentsDXai accounts and use cs@AgentsDX.com as the public email destination.
+- [x] Link the public Blog, Help Center, and Login destinations to the supplied Agents DX domains.
+- [x] Integrate the supplied Cal.com platform booking trigger for Book a Demo actions while preserving a graceful fallback.
+- [x] Revalidate the revised site, contact flow, social links, and responsive design after the supplied content is applied.
+- [x] Apply the exact supplied tagline text "Built to Engage. Trained to Convert." at every approved public-facing tagline placement.
+- [x] Perform and document a full post-update verification pass for the contact/demo flow, updated social destinations, and responsive behavior across all affected routes.
+- [x] Capture and review post-update mobile renders for revised Pricing and Contact pages and document any corrective changes.
+- [x] Perform a targeted reachability audit of the configured public social destinations and record the results.
+- [x] Document the latest contact/demo flow verification, including the validated contact form state and Cal.com fallback behavior.
+- [ ] Confirm or replace the supplied social destinations that could not be verified publicly, particularly the YouTube URL that returned 404.

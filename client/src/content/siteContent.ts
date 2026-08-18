@@ -54,24 +54,24 @@ export const faqGroups = [
   {
     title: "Platform",
     questions: [
-      { question: "What is Agents DX?", answer: "Agents DX is positioned as an intelligent client-acquisition and automation system for teams that want a more deliberate way to guide demand from first signal to meaningful next step." },
-      { question: "Is Agents DX a replacement for our team?", answer: "The website presents Agents DX as an operational layer that helps teams create consistency and focus. Its role is to make valuable human attention available at the moments where judgement matters most." },
+      { question: "What is agents DX?", answer: "agents DX is an AI agents and business automation platform designed to launch and manage an active AI workforce for Support, Sales, and Booking." },
+      { question: "Is agents DX a replacement for our team?", answer: "agents DX is built to support practical work. Its role is to create useful automation and make valuable human attention available at the moments where judgement matters most." },
       { question: "Which channels can be part of the workflow?", answer: "Channel and integration availability should be confirmed during a demo. The product story is intentionally focused on the operating model and desired outcome rather than unapproved compatibility claims." },
     ],
   },
   {
     title: "Getting started",
     questions: [
-      { question: "How do we get started?", answer: "Use the Book a Demo page to share your goals, company context, and current challenge. The Agents DX team can then discuss the most appropriate next step." },
-      { question: "Can Agents DX support an agency model?", answer: "Agency and partnership requirements are a central use case for conversation. A discovery discussion can determine the right structure, workflow ownership, and client experience." },
+      { question: "How do we get started?", answer: "Use the Book a Demo page to share your goals, company context, and current challenge. The agents DX team can then discuss the most appropriate next step." },
+      { question: "Can agents DX support an agency model?", answer: "Agency and partnership requirements are a central use case for conversation. A discovery discussion can determine the right structure, workflow ownership, and client experience." },
       { question: "How is implementation scoped?", answer: "Implementation scope is determined from the team’s acquisition journey, desired automation boundaries, and the systems already in place. This prevents a generic setup from becoming the default." },
     ],
   },
   {
     title: "Security & trust",
     questions: [
-      { question: "Where can we review legal information?", answer: "The Privacy Policy and Terms of Service routes are included in the site footer. Their substantive legal copy should be reviewed and supplied by the authorised Agents DX legal owner before publication." },
-      { question: "How are client stories and ratings handled?", answer: "Agents DX should publish only genuine, approved, attributable customer proof. The site’s social-proof component is designed to accept authorised content without manufacturing ratings, quotes, or client marks." },
+      { question: "Where can we review legal information?", answer: "The Privacy Policy and Terms of Service routes are included in the site footer. Their substantive legal copy should be reviewed and supplied by the authorised agents DX legal owner before publication." },
+      { question: "How are client stories and ratings handled?", answer: "agents DX should publish only genuine, approved, attributable customer proof. The site’s social-proof component is designed to accept authorised content without manufacturing ratings, quotes, or client marks." },
     ],
   },
 ];

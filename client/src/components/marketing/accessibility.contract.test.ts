@@ -25,4 +25,27 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(styles).toContain(":focus-visible");
     expect(styles).toContain("outline: 3px solid var(--coral)");
   });
+
+  it("preserves the supplied tagline and public contact destinations", () => {
+    expect(marketingPages).toContain("Built to <em>Engage.</em><br />Trained to Convert.");
+    expect(siteShell).toContain("https://cal.com/agentsdx/platform");
+    expect(siteShell).toContain("mailto:cs@AgentsDX.com");
+    [
+      "https://www.facebook.com/AgentsDXai",
+      "https://www.instagram.com/AgentsDXai",
+      "https://www.threads.net/@AgentsDXai",
+      "https://x.com/AgentsDXai",
+      "https://www.linkedin.com/company/agentsdxai",
+      "https://www.youtube.com/@AgentsDXai",
+      "https://www.tiktok.com/@AgentsDXai",
+      "https://www.snapchat.com/add/AgentsDXai",
+      "https://www.pinterest.com/AgentsDXai",
+    ].forEach(url => expect(siteShell).toContain(url));
+  });
+
+  it("keeps the contact page wired to the supplied Cal.com platform booking flow", () => {
+    expect(marketingPages).toContain('data-cal-link="agentsdx/platform"');
+    expect(marketingPages).toContain('href="https://cal.com/agentsdx/platform"');
+    expect(marketingPages).toContain("Prepare Demo Request");
+  });
 });

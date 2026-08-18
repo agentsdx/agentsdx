@@ -1,7 +1,8 @@
 import { Menu, X, ArrowUpRight, Linkedin, Youtube } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
 import { BrandMark } from "./BrandMark";
+import { configurePlatformCal } from "@/lib/calEmbed";
 
 const navItems = [
   { href: "/features", label: "Features" },
@@ -13,6 +14,14 @@ const navItems = [
 
 export function ButtonLink({ href, children, variant = "primary", className = "" }: { href: string; children: ReactNode; variant?: "primary" | "dark" | "outline" | "text"; className?: string }) {
   const classNames = `button-link button-link--${variant} ${className}`.trim();
+  const isDemoAction = typeof children === "string" && children.includes("Book a Demo");
+  if (isDemoAction) {
+    return (
+      <a href="https://cal.com/agentsdx/platform" data-cal-link="agentsdx/platform" data-cal-namespace="platform" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' className={classNames}>
+        <span>{children}</span><ArrowUpRight size={16} strokeWidth={2.4} aria-hidden="true" />
+      </a>
+    );
+  }
   return (
     <Link href={href} className={classNames}>
       <span>{children}</span>
@@ -37,6 +46,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="site-header__actions">
+          <ButtonLink href="/pricing" variant="text" className="site-header__start">Get Started</ButtonLink>
           <ButtonLink href="/contact" variant="primary" className="site-header__cta">Book a Demo</ButtonLink>
           <button className="menu-trigger" type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} onClick={() => setOpen(!open)}>
             {open ? <X size={22} /> : <Menu size={22} />}
@@ -52,6 +62,7 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
+          <ButtonLink href="/pricing" variant="outline" className="mobile-nav__cta mobile-nav__start">Get Started</ButtonLink>
           <ButtonLink href="/contact" variant="primary" className="mobile-nav__cta">Book a Demo</ButtonLink>
         </div>
       )}
@@ -66,11 +77,17 @@ export function SiteFooter() {
         <div className="site-footer__top">
           <div className="site-footer__intro">
             <BrandMark inverse />
-            <p>Intelligent systems for teams that want a more deliberate way to create, qualify, and convert demand.</p>
-            <div className="social-links" aria-label="Agents DX social-media identifiers">
-              <span role="img" aria-label="Agents DX LinkedIn identifier"><Linkedin size={18} /></span>
-              <span role="img" aria-label="Agents DX X identifier">X</span>
-              <span role="img" aria-label="Agents DX YouTube identifier"><Youtube size={19} /></span>
+            <p>Built to Engage. Trained to Convert.</p>
+            <div className="social-links" aria-label="agents DX social media">
+              <a href="https://www.facebook.com/AgentsDXai" aria-label="agents DX on Facebook">f</a>
+              <a href="https://www.instagram.com/AgentsDXai" aria-label="agents DX on Instagram">◎</a>
+              <a href="https://www.threads.net/@AgentsDXai" aria-label="agents DX on Threads">@</a>
+              <a href="https://x.com/AgentsDXai" aria-label="agents DX on X">X</a>
+              <a href="https://www.linkedin.com/company/agentsdxai" aria-label="agents DX on LinkedIn"><Linkedin size={18} /></a>
+              <a href="https://www.youtube.com/@AgentsDXai" aria-label="agents DX on YouTube"><Youtube size={19} /></a>
+              <a href="https://www.tiktok.com/@AgentsDXai" aria-label="agents DX on TikTok">♪</a>
+              <a href="https://www.snapchat.com/add/AgentsDXai" aria-label="agents DX on Snapchat">◉</a>
+              <a href="https://www.pinterest.com/AgentsDXai" aria-label="agents DX on Pinterest">P</a>
             </div>
           </div>
           <div className="site-footer__nav">
@@ -79,13 +96,15 @@ export function SiteFooter() {
               <Link href="/features">Features</Link>
               <Link href="/pricing">Pricing</Link>
               <Link href="/about">Our Story</Link>
-              <Link href="/resources">Resources</Link>
+              <a href="https://blog.agentsdx.com">Blog</a>
+              <a href="https://help.agentsdx.com">Help Center</a>
             </div>
             <div>
               <p className="footer-label">Connect</p>
               <Link href="/contact">Book a Demo</Link>
               <Link href="/faq">FAQ</Link>
-              <a href="mailto:hello@agentsdx.com">hello@agentsdx.com</a>
+              <a href="https://app.agentsdx.com">Login</a>
+              <a href="mailto:cs@AgentsDX.com">cs@AgentsDX.com</a>
             </div>
             <div>
               <p className="footer-label">Legal</p>
@@ -95,7 +114,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="site-footer__bottom">
-          <p>© {new Date().getFullYear()} Agents DX. Built for ambitious teams.</p>
+          <p>© {new Date().getFullYear()} agents DX. Built for ambitious teams.</p>
           <p className="footer-status"><span /> Systems designed for momentum</p>
         </div>
       </div>
@@ -130,7 +149,7 @@ export function SectionHeading({ eyebrow, title, intro, alignment = "left" }: { 
 
 export type ProofItem = { quote: string; author: string; company: string; rating: number };
 
-export function SocialProof({ items = [] }: { items?: ProofItem[] }) {
+export function SocialProof({ items = [], logoNames = [] }: { items?: ProofItem[]; logoNames?: string[] }) {
   if (items.length === 0) {
     return (
       <section className="proof-section proof-section--pending" aria-label="Customer evidence framework">
@@ -142,8 +161,8 @@ export function SocialProof({ items = [] }: { items?: ProofItem[] }) {
           <div className="proof-section__pending-card">
             <span className="signal-orb">01</span>
             <h3>Evidence deserves a standard.</h3>
-            <p>Agents DX publishes client outcomes only when the source is authorised, the statement is attributable, and the context is meaningful. That is how useful proof stays credible.</p>
-            <div className="proof-principles" aria-label="Agents DX evidence standard"><span>AUTHORISED SOURCE</span><span>ATTRIBUTABLE</span><span>MEANINGFUL CONTEXT</span></div>
+            <p>agents DX publishes client outcomes only when the source is authorised, the statement is attributable, and the context is meaningful. That is how useful proof stays credible.</p>
+            <div className="proof-principles" aria-label="agents DX evidence standard"><span>AUTHORISED SOURCE</span><span>ATTRIBUTABLE</span><span>MEANINGFUL CONTEXT</span></div>
           </div>
         </div>
       </section>
@@ -163,6 +182,7 @@ export function SocialProof({ items = [] }: { items?: ProofItem[] }) {
             </article>
           ))}
         </div>
+        {logoNames.length > 0 && <div className="proof-logo-strip" aria-label="Approved client logos">{logoNames.map(name => <span key={name}>{name}</span>)}</div>}
       </div>
     </section>
   );
@@ -185,5 +205,15 @@ export function FinalCta({ title = <>Ready to turn every signal into <em>forward
 }
 
 export function MarketingLayout({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    if (document.getElementById("agents-dx-cal-embed")) return;
+    const script = document.createElement("script");
+    script.id = "agents-dx-cal-embed";
+    script.src = "https://app.cal.com/embed/embed.js";
+    script.async = true;
+    script.onload = () => configurePlatformCal(window.Cal);
+    document.head.appendChild(script);
+  }, []);
+
   return <><SiteHeader /><main>{children}</main><SiteFooter /></>;
 }

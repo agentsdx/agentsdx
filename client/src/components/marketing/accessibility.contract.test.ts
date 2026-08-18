@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 
 const siteShell = readFileSync(new URL("./SiteShell.tsx", import.meta.url), "utf8");
 const marketingPages = readFileSync(new URL("../../pages/MarketingPages.tsx", import.meta.url), "utf8");
+const appRoutes = readFileSync(new URL("../../App.tsx", import.meta.url), "utf8");
 const styles = readFileSync(new URL("../../index.css", import.meta.url), "utf8");
 
 describe("Agents DX keyboard accessibility contract", () => {
@@ -48,5 +49,10 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(marketingPages).toContain('data-cal-link="agentsdx/platform"');
     expect(marketingPages).toContain('href="https://cal.com/agentsdx/platform"');
     expect(marketingPages).toContain("Prepare Demo Request");
+  });
+
+  it("wires every original Use Cases and footer-page destination into both the route registry and footer navigation", () => {
+    ["/use-cases", "/use-cases/:slug", "/integrations", "/academy", "/careers", "/brand-guidelines"].forEach(route => expect(appRoutes).toContain(route));
+    ["/integrations", "/academy", "/careers", "/brand-guidelines", "/use-cases/small-business", "/use-cases/ecommerce", "/use-cases/agencies", "/use-cases/enterprise", "/use-cases/startups"].forEach(destination => expect(siteShell).toContain(destination));
   });
 });

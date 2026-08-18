@@ -28,3 +28,26 @@ Post-update mobile review confirmed the revised Contact page preserves a readabl
 The desktop header now includes the supplied Login route to `https://app.agentsdx.com/`, with a matching Login entry inside the mobile navigation. The footer has been rebuilt into Platform, Solutions, Resources, and Company groups using the supplied labels. Social controls now use consistent brand-icon glyphs rather than mixed text symbols. Desktop and 390px full-page renders confirm that the revised navigation, icon row, group labels, legal links, and footer stack remain legible.
 
 After removing the known-broken YouTube destination, the desktop and 390px footer renders were rechecked. The remaining social controls stay balanced, the four navigation groups stay readable, and the footer continues to stack correctly on narrow screens.
+
+## Use Cases and footer-page expansion — 18 August 2026
+
+Desktop verification covered the Use Cases index, three representative solution-detail routes, and every new footer-linked page. Mobile verification covered the Use Cases index, Small Business detail, Integrations, Careers, and Brand Guidelines at 390px width. The command-centre hero, context-card grid, operating-rhythm panel, use-case steps, capability surfaces, CTA actions, and footer navigation remain readable and responsive. The small-business route confirms the single-column mobile use-case detail pattern used by the full solution family.
+
+The remaining mobile verification covered Agencies, E-commerce, Enterprise, Startups, and agents DX Academy at 390px width. Every new solution-detail route and footer-linked page now has a reviewed narrow-screen rendering. The repeated detail template remains readable without card compression, while the Academy page maintains the intended four-part learning sequence and mobile footer stack.
+
+The final desktop renders covered the Small Business and Startups routes. Together with the prior desktop and mobile capture sets, every new Use Case detail and footer-linked page has now been reviewed at both target breakpoints. No additional layout or navigation defects were identified.
+
+### Complete route-by-route verification matrix
+
+| Route | Desktop 1280px | Mobile 390px | Result |
+| --- | --- | --- | --- |
+| `/use-cases` | Reviewed | Reviewed | Passed; command-centre index, context cards, CTA actions, and footer remain legible. |
+| `/use-cases/small-business` | Reviewed | Reviewed | Passed; operating-rhythm panel and three-step detail sequence adapt to one column. |
+| `/use-cases/ecommerce` | Reviewed | Reviewed | Passed; use-case narrative, capability surface, and footer stack are readable. |
+| `/use-cases/agencies` | Reviewed | Reviewed | Passed; card spacing and long-form operational content retain hierarchy. |
+| `/use-cases/enterprise` | Reviewed | Reviewed | Passed; governed-workforce detail sequence remains readable at both breakpoints. |
+| `/use-cases/startups` | Reviewed | Reviewed | Passed; learning-loop copy and capability rows stay balanced. |
+| `/integrations` | Reviewed | Reviewed | Passed; four building-block cards collapse cleanly. |
+| `/academy` | Reviewed | Reviewed | Passed; learning-path cards preserve their order and spacing. |
+| `/careers` | Reviewed | Reviewed | Passed; employer narrative and four role principles remain legible. |
+| `/brand-guidelines` | Reviewed | Reviewed | Passed; colour, typography, and visual-system guidance remains scannable. |

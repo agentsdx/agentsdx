@@ -7,6 +7,7 @@ import { configurePlatformCal } from "@/lib/calEmbed";
 
 const navItems = [
   { href: "/features", label: "Features" },
+  { href: "/use-cases", label: "Use Cases" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "Our Story" },
   { href: "/resources", label: "Resources" },
@@ -63,7 +64,7 @@ export function SiteHeader() {
                 <span>0{index + 1}</span>{item.label}<ArrowUpRight size={18} aria-hidden="true" />
               </Link>
             ))}
-            <a href="https://app.agentsdx.com/" className="mobile-nav__link" onClick={() => setOpen(false)}><span>06</span>Login<ArrowUpRight size={18} aria-hidden="true" /></a>
+            <a href="https://app.agentsdx.com/" className="mobile-nav__link" onClick={() => setOpen(false)}><span>0{navItems.length + 1}</span>Login<ArrowUpRight size={18} aria-hidden="true" /></a>
           </nav>
           <ButtonLink href="/pricing" variant="outline" className="mobile-nav__cta mobile-nav__start">Get Started</ButtonLink>
           <ButtonLink href="/contact" variant="primary" className="mobile-nav__cta">Book a Demo</ButtonLink>
@@ -97,28 +98,28 @@ export function SiteFooter() {
               <p className="footer-label">Platform</p>
               <Link href="/features">Features</Link>
               <Link href="/pricing">Pricing</Link>
-              <span className="footer-placeholder" title="Destination in preparation">Integrations</span>
+              <Link href="/integrations">Integrations</Link>
             </div>
             <div>
               <p className="footer-label">Solutions</p>
-              <span className="footer-placeholder" title="Destination in preparation">Small Business</span>
-              <span className="footer-placeholder" title="Destination in preparation">E-commerce</span>
-              <span className="footer-placeholder" title="Destination in preparation">Agencies</span>
-              <span className="footer-placeholder" title="Destination in preparation">Enterprise</span>
-              <span className="footer-placeholder" title="Destination in preparation">Startups</span>
+              <Link href="/use-cases/small-business">Small Business</Link>
+              <Link href="/use-cases/ecommerce">E-commerce</Link>
+              <Link href="/use-cases/agencies">Agencies</Link>
+              <Link href="/use-cases/enterprise">Enterprise</Link>
+              <Link href="/use-cases/startups">Startups</Link>
             </div>
             <div>
               <p className="footer-label">Resources</p>
               <a href="https://blog.agentsdx.com">Blog &amp; Guides</a>
               <a href="https://docs.agentsdx.com/">Help Center</a>
-              <span className="footer-placeholder" title="Destination in preparation">Agents DX Academy</span>
+              <Link href="/academy">Agents DX Academy</Link>
             </div>
             <div>
               <p className="footer-label">Company</p>
               <Link href="/about">About Us</Link>
               <Link href="/contact">Contact</Link>
-              <span className="footer-placeholder" title="Destination in preparation">Careers</span>
-              <span className="footer-placeholder" title="Destination in preparation">Brand Guidelines</span>
+              <Link href="/careers">Careers</Link>
+              <Link href="/brand-guidelines">Brand Guidelines</Link>
             </div>
           </div>
         </div>

@@ -45,3 +45,14 @@
 - [x] Verify the updated header, social controls, and footer at desktop and mobile widths, then add test coverage for supplied public destinations.
 - [x] Remove the known-broken YouTube destination and retain only the supplied social destinations that remain intentionally configured pending account confirmation.
 - [x] Re-run the desktop and mobile footer verification after correcting the known-broken social destination.
+- [x] Audit dmchamp.com/use-cases as a public structural reference only; do not copy its code, assets, or proprietary copy.
+- [x] Create an original agents DX Use Cases index page explaining how AI workforces serve distinct business contexts.
+- [x] Create original agents DX use-case detail routes for Small Business, E-commerce, Agencies, Enterprise, and Startups.
+- [x] Create creative, original footer-linked pages for Integrations, Agents DX Academy, Careers, and Brand Guidelines.
+- [x] Connect every newly implemented footer label to its relevant route and maintain intentional non-navigation only for links not yet approved.
+- [x] Add unit coverage for the new route and footer-link architecture.
+- [x] Verify all new pages and footer destinations at desktop and mobile widths, then resolve visual or navigation defects.
+- [x] Add static route and footer-link contract assertions for every new Use Cases and footer-linked destination.
+- [x] Capture and review mobile renders for every Use Case detail route and the Academy page, then document and resolve any defects found.
+- [x] Capture and review desktop renders for Small Business and Startups, then record a complete desktop/mobile verification matrix for every new route.
+- [x] Add a route-by-route desktop/mobile verification matrix for every new Use Case and footer-linked page to the project documentation.

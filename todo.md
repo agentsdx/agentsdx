@@ -64,3 +64,18 @@
 - [x] Exclude agency-reseller and white-label positioning from all new How It Works page content and calls to action.
 - [x] Add a primary-navigation link and route for the new How It Works page.
 - [x] Add automated route/content coverage and verify the page at desktop and mobile widths.
+- [x] Replace the existing contact-form flow with a form-free Contact Us page offering email, live-chat availability, and demo booking options.
+- [x] Display the supplied cs@AgentsDX.com email contact and clearly communicate 24/7 live-chat support availability without inventing a live-chat provider or destination.
+- [x] Add distinct in-page Cal.com booking controls for Agents DX Platform and Agents DX + Dedicated Manager using the supplied platform namespaces and configurations.
+- [x] Reuse the approved Cal.com loader safely; do not inject duplicate raw embed scripts from the supplied content.
+- [x] Update booking contract coverage and verify the revised contact experience at desktop and mobile widths.
+- [x] Repair the Cal.com bootstrap so both supplied booking actions follow the supplied in-frame trigger pattern while retaining direct fallback URLs.
+- [x] Add an accessible first-party in-page Cal.com frame fallback that preserves the supplied direct booking URLs when the external embed script is unavailable.
+- [x] Replace the existing contact-form flow with a form-free Contact Us page offering email, live-chat availability, and demo booking options.
+- [x] Display the supplied cs@AgentsDX.com email contact and clearly communicate 24/7 live-chat support availability without inventing a live-chat provider or destination.
+- [x] Add distinct in-page Cal.com booking controls for Agents DX Platform and Agents DX + Dedicated Manager using the supplied platform namespaces and configurations.
+- [x] Reuse the approved Cal.com loader safely; do not inject duplicate raw embed scripts from the supplied content.
+- [x] Update booking contract coverage and verify the revised contact experience at desktop and mobile widths.
+- [ ] Confirm the native Cal.com in-frame popup behavior in a deployed browser environment, where the external embed script can load, while retaining direct booking fallbacks.
+- [x] Reintroduce a native, accessible in-page booking fallback for each consultation path while retaining the Cal.com trigger links and direct booking URLs.
+- [ ] Remove the unused legacy contact-form component and its stale inquiry-flow copy from the public marketing-page module.

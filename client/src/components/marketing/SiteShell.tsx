@@ -3,7 +3,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaSnapchat, FaTiktok, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { Link, useLocation } from "wouter";
 import { BrandMark } from "./BrandMark";
-import { configurePlatformCal } from "@/lib/calEmbed";
+import { bootstrapCalEmbed, configureDedicatedManagerCal, configurePlatformCal } from "@/lib/calEmbed";
 
 const navItems = [
   { href: "/features", label: "Features" },
@@ -218,13 +218,9 @@ export function FinalCta({ title = <>Ready to turn every signal into <em>forward
 
 export function MarketingLayout({ children }: { children: ReactNode }) {
   useEffect(() => {
-    if (document.getElementById("agents-dx-cal-embed")) return;
-    const script = document.createElement("script");
-    script.id = "agents-dx-cal-embed";
-    script.src = "https://app.cal.com/embed/embed.js";
-    script.async = true;
-    script.onload = () => configurePlatformCal(window.Cal);
-    document.head.appendChild(script);
+    const cal = bootstrapCalEmbed();
+    configurePlatformCal(cal);
+    configureDedicatedManagerCal(cal);
   }, []);
 
   return <><SiteHeader /><main>{children}</main><SiteFooter /></>;

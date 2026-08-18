@@ -45,6 +45,12 @@ The footer now displays the exact user-authorised eight-platform `@AgentsDXai` s
 
 The new `/how-it-works` route was reviewed in a full-page 1280px desktop rendering and a 390px mobile rendering. It presents an original company-facing sequence—**Orient the workforce, Design the role, Deploy the rhythm, Improve the system**—with an operating-canvas visual, role-assignment surface, governed-control explanation, and direct company deployment CTAs. The page contains no agency-reseller or white-label messaging. The desktop sequence maintains the intended high-contrast operating-console rhythm, while the mobile layout converts the four-step loop and role list into readable, comfortably tappable single-column surfaces.
 
+## Contact directory and dual-booking update — 18 August 2026
+
+The form-free `/contact` route was reviewed in full-page desktop and 390px mobile renderings. It now provides distinct Email Us, Live Chat availability, and Schedule a Call pathways, followed by two clearly differentiated booking surfaces for **Agents DX Platform** and **Agents DX + Dedicated Manager**. The contact directory preserves readable hierarchy at both breakpoints; the platform and dedicated-manager booking actions remain visually distinct and comfortably tappable on mobile. No form fields or invented live-chat destination are present.
+
+The finalized layout removes preview-only blank calendar frames and presents the approved Cal.com booking triggers directly from the two booking cards, with their direct booking destinations preserved as fallbacks. Both desktop and mobile renders retain the contact-path hierarchy, two-card consultation choice, and compact footer without overflow or compressed call-to-action controls.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

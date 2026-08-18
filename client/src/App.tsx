@@ -4,7 +4,8 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { AboutPage, ArticlePage, ContactPage, FaqPage, FeaturesPage, HomePage, LegalPage, PricingPage, ResourcesPage } from "./pages/MarketingPages";
+import { AboutPage, ArticlePage, FaqPage, FeaturesPage, HomePage, LegalPage, PricingPage, ResourcesPage } from "./pages/MarketingPages";
+import { ContactDirectoryPage } from "./pages/ContactDirectoryPage";
 import { FooterLandingPage, UseCaseDetailPage, UseCasesPage } from "./pages/UseCasePages";
 import { HowItWorksPage } from "./pages/HowItWorksPage";
 
@@ -19,7 +20,7 @@ function Router() {
       <Route path={"/use-cases/:slug"} component={UseCaseDetailPage} />
       <Route path={"/pricing"} component={PricingPage} />
       <Route path={"/about"} component={AboutPage} />
-      <Route path={"/contact"} component={ContactPage} />
+      <Route path={"/contact"} component={ContactDirectoryPage} />
       <Route path={"/resources"} component={ResourcesPage} />
       <Route path={"/resources/:slug"} component={ArticlePage} />
       <Route path={"/faq"} component={FaqPage} />

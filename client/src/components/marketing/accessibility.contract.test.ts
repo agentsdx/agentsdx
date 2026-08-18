@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 
 const siteShell = readFileSync(new URL("./SiteShell.tsx", import.meta.url), "utf8");
 const marketingPages = readFileSync(new URL("../../pages/MarketingPages.tsx", import.meta.url), "utf8");
+const contactDirectory = readFileSync(new URL("../../pages/ContactDirectoryPage.tsx", import.meta.url), "utf8");
 const appRoutes = readFileSync(new URL("../../App.tsx", import.meta.url), "utf8");
 const howItWorksPage = readFileSync(new URL("../../pages/HowItWorksPage.tsx", import.meta.url), "utf8");
 const styles = readFileSync(new URL("../../index.css", import.meta.url), "utf8");
@@ -15,12 +16,10 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(siteShell).toContain('aria-label="Mobile navigation"');
   });
 
-  it("preserves accessible native controls for the key interactive routes", () => {
-    expect(marketingPages).toContain("<form onSubmit={submit} noValidate>");
+  it("preserves accessible native controls and clear contact routes for the key interactive pages", () => {
     expect(marketingPages).toContain("<details key={item.question}>");
     expect(marketingPages).toContain("<summary>");
-    expect(marketingPages).toContain('role="alert"');
-    expect(marketingPages).toContain('role="status"');
+    expect(contactDirectory).toContain('href="mailto:cs@AgentsDX.com"');
   });
 
   it("maintains a visible keyboard focus treatment for links, controls, and form fields", () => {
@@ -48,9 +47,18 @@ describe("Agents DX keyboard accessibility contract", () => {
   });
 
   it("keeps the contact page wired to the supplied Cal.com platform booking flow", () => {
-    expect(marketingPages).toContain('data-cal-link="agentsdx/platform"');
-    expect(marketingPages).toContain('href="https://cal.com/agentsdx/platform"');
-    expect(marketingPages).toContain("Prepare Demo Request");
+    expect(contactDirectory).toContain('link: "agentsdx/platform"');
+    expect(contactDirectory).toContain('href: "https://cal.com/agentsdx/platform"');
+    expect(contactDirectory).toContain('link: "agentsdx/platform-dedicated-manager"');
+    expect(contactDirectory).toContain('href: "https://cal.com/agentsdx/platform-dedicated-manager"');
+    expect(contactDirectory).toContain('data-cal-link={option.link}');
+    expect(contactDirectory).toContain('data-cal-namespace={option.namespace}');
+    expect(contactDirectory).toContain('data-cal-config');
+    expect(contactDirectory).toContain("direct booking fallback");
+    expect(contactDirectory).toContain('className="booking-native-fallback"');
+    expect(contactDirectory).toContain("in-page booking calendar");
+    expect(contactDirectory).toContain("Available 24/7");
+    expect(contactDirectory).not.toContain("Prepare Demo Request");
   });
 
   it("wires every original Use Cases and footer-page destination into both the route registry and footer navigation", () => {

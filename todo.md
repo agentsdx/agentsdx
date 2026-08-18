@@ -79,3 +79,4 @@
 - [ ] Confirm the native Cal.com in-frame popup behavior in a deployed browser environment, where the external embed script can load, while retaining direct booking fallbacks.
 - [x] Reintroduce a native, accessible in-page booking fallback for each consultation path while retaining the Cal.com trigger links and direct booking URLs.
 - [ ] Remove the unused legacy contact-form component and its stale inquiry-flow copy from the public marketing-page module.
+- [x] Add the supplied official agents DX favicon asset to the site metadata and verify it loads in the browser.

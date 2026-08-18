@@ -38,3 +38,10 @@
 - [x] Perform a targeted reachability audit of the configured public social destinations and record the results.
 - [x] Document the latest contact/demo flow verification, including the validated contact form state and Cal.com fallback behavior.
 - [ ] Confirm or replace the supplied social destinations that could not be verified publicly, particularly the YouTube URL that returned 404.
+- [x] Add a header Login link pointing to https://app.agentsdx.com/ and preserve the responsive mobile navigation experience.
+- [x] Replace the inconsistent social-media glyphs with an accessible, visually consistent icon set and keep only intentional destination links.
+- [x] Rebuild the footer navigation into the supplied Platform, Solutions, Resources, and Company groups with their exact requested link labels.
+- [x] Map the requested footer destinations to existing routes or clearly non-navigating placeholders where a final URL has not been supplied.
+- [x] Verify the updated header, social controls, and footer at desktop and mobile widths, then add test coverage for supplied public destinations.
+- [x] Remove the known-broken YouTube destination and retain only the supplied social destinations that remain intentionally configured pending account confirmation.
+- [x] Re-run the desktop and mobile footer verification after correcting the known-broken social destination.

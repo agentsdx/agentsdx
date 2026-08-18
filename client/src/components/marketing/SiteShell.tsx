@@ -1,5 +1,6 @@
 import { Menu, X, ArrowUpRight, Linkedin, Youtube } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaSnapchat, FaThreads, FaTiktok, FaXTwitter } from "react-icons/fa6";
 import { Link, useLocation } from "wouter";
 import { BrandMark } from "./BrandMark";
 import { configurePlatformCal } from "@/lib/calEmbed";
@@ -46,6 +47,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="site-header__actions">
+          <a href="https://app.agentsdx.com/" className="site-header__login">Login</a>
           <ButtonLink href="/pricing" variant="text" className="site-header__start">Get Started</ButtonLink>
           <ButtonLink href="/contact" variant="primary" className="site-header__cta">Book a Demo</ButtonLink>
           <button className="menu-trigger" type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} onClick={() => setOpen(!open)}>
@@ -61,6 +63,7 @@ export function SiteHeader() {
                 <span>0{index + 1}</span>{item.label}<ArrowUpRight size={18} aria-hidden="true" />
               </Link>
             ))}
+            <a href="https://app.agentsdx.com/" className="mobile-nav__link" onClick={() => setOpen(false)}><span>06</span>Login<ArrowUpRight size={18} aria-hidden="true" /></a>
           </nav>
           <ButtonLink href="/pricing" variant="outline" className="mobile-nav__cta mobile-nav__start">Get Started</ButtonLink>
           <ButtonLink href="/contact" variant="primary" className="mobile-nav__cta">Book a Demo</ButtonLink>
@@ -79,40 +82,47 @@ export function SiteFooter() {
             <BrandMark inverse />
             <p>Built to Engage. Trained to Convert.</p>
             <div className="social-links" aria-label="agents DX social media">
-              <a href="https://www.facebook.com/AgentsDXai" aria-label="agents DX on Facebook">f</a>
-              <a href="https://www.instagram.com/AgentsDXai" aria-label="agents DX on Instagram">◎</a>
-              <a href="https://www.threads.net/@AgentsDXai" aria-label="agents DX on Threads">@</a>
-              <a href="https://x.com/AgentsDXai" aria-label="agents DX on X">X</a>
-              <a href="https://www.linkedin.com/company/agentsdxai" aria-label="agents DX on LinkedIn"><Linkedin size={18} /></a>
-              <a href="https://www.youtube.com/@AgentsDXai" aria-label="agents DX on YouTube"><Youtube size={19} /></a>
-              <a href="https://www.tiktok.com/@AgentsDXai" aria-label="agents DX on TikTok">♪</a>
-              <a href="https://www.snapchat.com/add/AgentsDXai" aria-label="agents DX on Snapchat">◉</a>
-              <a href="https://www.pinterest.com/AgentsDXai" aria-label="agents DX on Pinterest">P</a>
+              <a href="https://www.facebook.com/AgentsDXai" aria-label="agents DX on Facebook"><FaFacebookF /></a>
+              <a href="https://www.instagram.com/AgentsDXai" aria-label="agents DX on Instagram"><FaInstagram /></a>
+              <a href="https://www.threads.net/@AgentsDXai" aria-label="agents DX on Threads"><FaThreads /></a>
+              <a href="https://x.com/AgentsDXai" aria-label="agents DX on X"><FaXTwitter /></a>
+              <a href="https://www.linkedin.com/company/agentsdxai" aria-label="agents DX on LinkedIn"><FaLinkedinIn /></a>
+              <a href="https://www.tiktok.com/@AgentsDXai" aria-label="agents DX on TikTok"><FaTiktok /></a>
+              <a href="https://www.snapchat.com/add/AgentsDXai" aria-label="agents DX on Snapchat"><FaSnapchat /></a>
+              <a href="https://www.pinterest.com/AgentsDXai" aria-label="agents DX on Pinterest"><FaPinterestP /></a>
             </div>
           </div>
           <div className="site-footer__nav">
             <div>
-              <p className="footer-label">Explore</p>
+              <p className="footer-label">Platform</p>
               <Link href="/features">Features</Link>
               <Link href="/pricing">Pricing</Link>
-              <Link href="/about">Our Story</Link>
-              <a href="https://blog.agentsdx.com">Blog</a>
-              <a href="https://help.agentsdx.com">Help Center</a>
+              <span className="footer-placeholder" title="Destination in preparation">Integrations</span>
             </div>
             <div>
-              <p className="footer-label">Connect</p>
-              <Link href="/contact">Book a Demo</Link>
-              <Link href="/faq">FAQ</Link>
-              <a href="https://app.agentsdx.com">Login</a>
-              <a href="mailto:cs@AgentsDX.com">cs@AgentsDX.com</a>
+              <p className="footer-label">Solutions</p>
+              <span className="footer-placeholder" title="Destination in preparation">Small Business</span>
+              <span className="footer-placeholder" title="Destination in preparation">E-commerce</span>
+              <span className="footer-placeholder" title="Destination in preparation">Agencies</span>
+              <span className="footer-placeholder" title="Destination in preparation">Enterprise</span>
+              <span className="footer-placeholder" title="Destination in preparation">Startups</span>
             </div>
             <div>
-              <p className="footer-label">Legal</p>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-of-service">Terms of Service</Link>
+              <p className="footer-label">Resources</p>
+              <a href="https://blog.agentsdx.com">Blog &amp; Guides</a>
+              <a href="https://docs.agentsdx.com/">Help Center</a>
+              <span className="footer-placeholder" title="Destination in preparation">Agents DX Academy</span>
+            </div>
+            <div>
+              <p className="footer-label">Company</p>
+              <Link href="/about">About Us</Link>
+              <Link href="/contact">Contact</Link>
+              <span className="footer-placeholder" title="Destination in preparation">Careers</span>
+              <span className="footer-placeholder" title="Destination in preparation">Brand Guidelines</span>
             </div>
           </div>
         </div>
+        <div className="site-footer__legal" aria-label="Legal navigation"><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-of-service">Terms of Service</Link></div>
         <div className="site-footer__bottom">
           <p>© {new Date().getFullYear()} agents DX. Built for ambitious teams.</p>
           <p className="footer-status"><span /> Systems designed for momentum</p>

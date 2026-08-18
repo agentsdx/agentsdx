@@ -22,3 +22,9 @@ The sticky desktop header now presents both exact conversion labels—`Get Start
 The comprehensive post-update visual pass covered Home, Features, Pricing, About, Contact, Resources, FAQ, and a resource detail route at desktop size. All checked routes retained the updated agents DX wordmark convention, exact hero tagline, paired conversion actions, and supplied platform framing. The final command-surface and resource-card labels were also normalized to `agents DX` casing.
 
 Post-update mobile review confirmed the revised Contact page preserves a readable inquiry form and a clear live-booking CTA. The initial narrow-screen Pricing review exposed two plan cards compressing into a two-column grid; this was corrected to a single-column layout and rechecked successfully. The mobile plan cards, comparison surface, proof framework, CTAs, and footer are now readable and tappable at 390px width.
+
+## Header and footer refresh — 18 August 2026
+
+The desktop header now includes the supplied Login route to `https://app.agentsdx.com/`, with a matching Login entry inside the mobile navigation. The footer has been rebuilt into Platform, Solutions, Resources, and Company groups using the supplied labels. Social controls now use consistent brand-icon glyphs rather than mixed text symbols. Desktop and 390px full-page renders confirm that the revised navigation, icon row, group labels, legal links, and footer stack remain legible.
+
+After removing the known-broken YouTube destination, the desktop and 390px footer renders were rechecked. The remaining social controls stay balanced, the four navigation groups stay readable, and the footer continues to stack correctly on narrow screens.

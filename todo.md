@@ -1,0 +1,28 @@
+# Project TODO
+
+- [ ] Audit the supplied Agents DX brand guide, including the approved logo, color values, typography, and image assets.
+- [x] Apply the approved visual system: Coral #FF6D5A, Deep Slate #384D5B, Black #000000, White #FFFFFF, light #F8FAFC, and dark #0F172A foundations.
+- [x] Use Zen Dots exclusively for the Agents DX wordmark treatment and Inter for headings, body copy, and interface elements.
+- [x] Implement the premium AI SaaS aesthetic: high-contrast composition, clean grid-led layouts, minimalist surfaces, and conversion-focused interaction states.
+- [x] Audit the public information architecture of dmchamp.com as a structural reference only; do not copy its code, assets, or proprietary copy.
+- [x] Define original Agents DX conversion copy, page hierarchy, navigation, and responsive visual direction.
+- [ ] Build a sticky responsive top navigation bar with an approved Agents DX logo, route links, exact "Get Started" and "Book a Demo" CTAs, and a mobile menu.
+- [x] Build a polished Agents DX home page with a hero, animated feature highlights, exact primary CTAs, conversion sections, and social proof placement.
+- [x] Build a Features / How It Works page with clear AI automation and client-acquisition steps, icons, and explanatory visuals.
+- [x] Build a Pricing page with a monthly/annual billing toggle, tiered plan cards, a feature comparison table, exact CTAs, and the reusable social-proof section.
+- [x] Build an About / Our Story page with mission, core values, and clearly labeled team placeholders.
+- [x] Build a Contact / Book a Demo page with validated name, email, company, and message fields plus a non-functional calendar placeholder.
+- [x] Build an FAQ page with accessible category-grouped accordion questions and answers.
+- [x] Build a Blog / Resources index with article cards and an individual article detail route.
+- [ ] Build reusable testimonial/social-proof and logo-strip components without inventing customer reviews, ratings, quotes, or client logos.
+- [ ] Build a footer containing the Agents DX logo, navigation links, social icons, and exact "Privacy Policy" and "Terms of Service" legal links.
+- [x] Ensure all routes, components, interactive controls, and content layouts are mobile-responsive and keyboard-accessible.
+- [x] Add Vitest coverage for key route/content behavior and form validation.
+- [x] Run type checks, unit tests, and desktop/mobile visual verification; resolve defects found.
+- [ ] Review this task register and save the completed website checkpoint for delivery.
+- [ ] Replace the provisional Zen Dots wordmark treatment with the supplied official Agents DX logo asset.
+- [ ] Populate the reusable social-proof component with authorised client testimonials, ratings, and logo-strip assets.
+- [x] Replace placeholder social URLs with approved live destinations or render the social icons as non-link visual identifiers until URLs are supplied.
+- [x] Run a full keyboard and visible-focus accessibility pass across every public route and interactive element.
+- [x] Capture and review mobile renders for Features, About, Resources, resource detail, Privacy Policy, and Terms of Service.
+- [x] Perform and document a route-by-route keyboard accessibility audit covering the header/mobile menu, CTAs, resource links, FAQ accordions, contact form, and footer/legal navigation; resolve any defects found.

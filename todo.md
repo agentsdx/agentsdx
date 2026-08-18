@@ -59,3 +59,8 @@
 - [x] Standardize the footer to the supplied @AgentsDXai social account set: Facebook, Instagram, X, LinkedIn, YouTube, TikTok, Snapchat, and Pinterest.
 - [x] Restore a consistent YouTube social icon and @AgentsDXai destination as explicitly re-authorised by the user.
 - [x] Update the public-link contract and verify the exact eight-icon social footer at desktop and mobile widths.
+- [x] Audit dmchamp.com/#how as a public structural reference only; do not copy its code, assets, proprietary copy, agency positioning, or white-label messaging.
+- [x] Create an original premium agents DX How It Works page focused on end users and companies that deploy AI workforces for Support, Sales, and Booking.
+- [x] Exclude agency-reseller and white-label positioning from all new How It Works page content and calls to action.
+- [x] Add a primary-navigation link and route for the new How It Works page.
+- [x] Add automated route/content coverage and verify the page at desktop and mobile widths.

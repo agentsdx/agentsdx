@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 const siteShell = readFileSync(new URL("./SiteShell.tsx", import.meta.url), "utf8");
 const marketingPages = readFileSync(new URL("../../pages/MarketingPages.tsx", import.meta.url), "utf8");
 const appRoutes = readFileSync(new URL("../../App.tsx", import.meta.url), "utf8");
+const howItWorksPage = readFileSync(new URL("../../pages/HowItWorksPage.tsx", import.meta.url), "utf8");
 const styles = readFileSync(new URL("../../index.css", import.meta.url), "utf8");
 
 describe("Agents DX keyboard accessibility contract", () => {
@@ -55,5 +56,18 @@ describe("Agents DX keyboard accessibility contract", () => {
   it("wires every original Use Cases and footer-page destination into both the route registry and footer navigation", () => {
     ["/use-cases", "/use-cases/:slug", "/integrations", "/academy", "/careers", "/brand-guidelines"].forEach(route => expect(appRoutes).toContain(route));
     ["/integrations", "/academy", "/careers", "/brand-guidelines", "/use-cases/small-business", "/use-cases/ecommerce", "/use-cases/agencies", "/use-cases/enterprise", "/use-cases/startups"].forEach(destination => expect(siteShell).toContain(destination));
+  });
+
+  it("keeps the How It Works route end-user focused and free of agency-reseller positioning", () => {
+    expect(appRoutes).toContain("/how-it-works");
+    expect(siteShell).toContain('href: "/how-it-works", label: "How It Works"');
+    expect(howItWorksPage).toContain("Orient the workforce");
+    expect(howItWorksPage).toContain("Design the role");
+    expect(howItWorksPage).toContain("Deploy the rhythm");
+    expect(howItWorksPage).toContain("Improve the system");
+    const pageCopy = howItWorksPage.toLowerCase();
+    expect(pageCopy).not.toContain("white-label");
+    expect(pageCopy).not.toContain("resell");
+    expect(pageCopy).not.toContain("agency plan");
   });
 });

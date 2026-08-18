@@ -41,6 +41,10 @@ The final desktop renders covered the Small Business and Startups routes. Togeth
 
 The footer now displays the exact user-authorised eight-platform `@AgentsDXai` set: Facebook, Instagram, X, LinkedIn, YouTube, TikTok, Snapchat, and Pinterest. The complete row was reviewed in full-page desktop and 390px mobile renders. The icon row remains visually balanced, recognisable, and comfortably tappable at the mobile breakpoint.
 
+## How It Works experience — 18 August 2026
+
+The new `/how-it-works` route was reviewed in a full-page 1280px desktop rendering and a 390px mobile rendering. It presents an original company-facing sequence—**Orient the workforce, Design the role, Deploy the rhythm, Improve the system**—with an operating-canvas visual, role-assignment surface, governed-control explanation, and direct company deployment CTAs. The page contains no agency-reseller or white-label messaging. The desktop sequence maintains the intended high-contrast operating-console rhythm, while the mobile layout converts the four-step loop and role list into readable, comfortably tappable single-column surfaces.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AboutPage, ArticlePage, ContactPage, FaqPage, FeaturesPage, HomePage, LegalPage, PricingPage, ResourcesPage } from "./pages/MarketingPages";
 import { FooterLandingPage, UseCaseDetailPage, UseCasesPage } from "./pages/UseCasePages";
+import { HowItWorksPage } from "./pages/HowItWorksPage";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -13,6 +14,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={HomePage} />
       <Route path={"/features"} component={FeaturesPage} />
+      <Route path={"/how-it-works"} component={HowItWorksPage} />
       <Route path={"/use-cases"} component={UseCasesPage} />
       <Route path={"/use-cases/:slug"} component={UseCaseDetailPage} />
       <Route path={"/pricing"} component={PricingPage} />

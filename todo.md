@@ -84,3 +84,9 @@
 - [x] Set the external Blog & Guides and Help Center links to open in a new browser tab with safe external-link attributes.
 - [x] Remove the separate AD logo badge and retain only the stylized agents DX wordmark in the header and footer.
 - [x] Add regression coverage and verify the iframe booking, external-link behavior, and wordmark-only logo across desktop and mobile layouts.
+- [x] Replace the harsh direct dark-background connection under the Contact Pathways cards with a deliberate refined visual separation.
+- [x] Verify the refined Contact Pathways-to-booking transition at desktop and mobile widths.
+- [x] Replace the harsh direct dark-background connection under the Contact Pathways cards with a deliberate refined visual separation.
+- [x] Verify the refined Contact Pathways-to-booking transition at desktop and mobile widths.
+- [x] Remove the unintended desktop and mobile whitespace band between the Contact Pathways card row and the dark booking section through a compact deliberate signal-divider treatment.
+- [x] Verify the corrected Contact Pathways-to-booking transition at desktop and mobile widths.

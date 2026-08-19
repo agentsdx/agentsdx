@@ -49,6 +49,7 @@ export function ContactDirectoryPage() {
               <span>03</span><CalendarDays size={25} strokeWidth={1.6} /><h3>Schedule a Call</h3><p>Book a demo with our experts</p><strong>Choose a booking path below</strong><ArrowRight size={17} />
             </article>
           </div>
+          <div className="contact-directory__bridge" aria-hidden="true"><span /><i /><span /></div>
         </div>
       </section>
 

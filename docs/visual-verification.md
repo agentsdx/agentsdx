@@ -57,6 +57,10 @@ The separate AD badge has been removed from the shared header and footer identit
 
 Mobile full-page captures of Home and Contact confirm that the wordmark-only header remains legible, the mobile menu retains Login access, all Book a Demo controls remain comfortably tappable, the two contact booking paths retain their visual distinction, and the simplified footer remains readable without horizontal overflow.
 
+## Contact-pathways transition refinement — 19 August 2026
+
+The Contact Pathways cards now end with a compact white signal divider—a coral status point between fine neutral rules—before the dark in-frame booking section begins. This creates a deliberate visual hand-off instead of either an oversized empty band or a harsh direct dark-background join. Full-page desktop and 390px mobile renders confirm the divider remains centered, proportionate, and visually quiet while preserving the intended separation.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

@@ -91,6 +91,12 @@ The rebuilt `/features` route was reviewed in full-page 1280px desktop and 375px
 
 At 375px, all content groups reflow into a readable single-column sequence. The workforce board changes to a stacked status flow, role and workflow cards stack cleanly, the platform comparison remains horizontally scrollable within its bounded container, and the FAQ controls retain clear disclosure affordances. The route contains no white-label, reseller, or agency-plan positioning.
 
+## Connected Channels selling point — 19 August 2026
+
+The revised `/features` route was reviewed in full-page 1280px desktop and 375px mobile renderings after adding the connected Channels selling point. The new section sits directly after the workforce-role overview, making it an early, prominent product value proposition. Its original agents DX framing explains how **website chat**, **email**, **social messaging**, and **booking handoffs** work as connected signals within one workforce context rather than separate customer silos.
+
+At 375px, the channel orbit canvas, supporting explanation, and four channel rows stack cleanly. The canvas maintains legible labels and state contrast, while the channel list has no horizontal overflow or compressed controls. The section remains channel-specific without duplicating reference-page language or any white-label, reseller, or agency positioning.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

@@ -113,3 +113,6 @@
 - [x] Add regression coverage and validate the upgraded Features route content and exclusions.
 - [x] Verify the redesigned Features page at desktop and mobile widths, document findings, and save a checkpoint.
 - [x] Confirm the Features-page desktop and mobile verification record is saved, then checkpoint the completed redesign.
+- [x] Add Channels as a prominent original selling-point section on the Features page.
+- [x] Explain how website chat, email, social messaging, and booking handoffs share one workforce context without copying reference-site channel claims.
+- [x] Add regression coverage and verify the Channels section at desktop and mobile widths.

@@ -135,6 +135,12 @@ describe("Agents DX keyboard accessibility contract", () => {
       "Support that responds",
       "Sales that follows through",
       "Booking that moves forward",
+      "Connected channels",
+      "Meet customers where they are.",
+      "Website chat",
+      "Email",
+      "Social messaging",
+      "Booking handoffs",
       "Intelligence layer",
       "Conversation & signal capture",
       "Workflows that convert",
@@ -147,6 +153,6 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(featuresPage.toLowerCase()).not.toContain("white-label");
     expect(featuresPage.toLowerCase()).not.toContain("resell");
     expect(featuresPage.toLowerCase()).not.toContain("agency plan");
-    [".features-command-hero", ".features-role-grid", ".features-intelligence-section", ".features-availability-wrap", ".features-faq-list"].forEach(selector => expect(styles).toContain(selector));
+    [".features-command-hero", ".features-role-grid", ".features-channels-section", ".features-channels-canvas", ".features-intelligence-section", ".features-availability-wrap", ".features-faq-list"].forEach(selector => expect(styles).toContain(selector));
   });
 });

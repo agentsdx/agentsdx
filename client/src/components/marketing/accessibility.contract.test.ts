@@ -103,9 +103,12 @@ describe("Agents DX keyboard accessibility contract", () => {
   });
 
   it("keeps the supplied Platform price and the revised Resources and FAQ navigation architecture", () => {
-    expect(marketingPages).toContain('price: "USD 149"');
-    expect(marketingPages).toContain('cadence: "/ Month"');
+    expect(marketingPages).toContain('monthlyPrice: "USD 149"');
+    expect(marketingPages).toContain('annualPrice: "USD 1,788"');
     expect(marketingPages).toContain("Billed monthly");
+    expect(marketingPages).toContain('annual ? plan.annualPrice : plan.monthlyPrice');
+    expect(marketingPages).toContain("Billed annually (USD 149 / Month)");
+    expect(marketingPages).toContain('new URLSearchParams(window.location.search).get("billing") === "annual"');
     expect(siteShell).toContain("Resources <ChevronDown");
     expect(siteShell).toContain('className="site-nav__resources-menu"');
     expect(siteShell).toContain('href="https://blog.agentsdx.com" target="_blank" rel="noreferrer"');

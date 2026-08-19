@@ -99,3 +99,7 @@
 - [x] Remove FAQ from the primary header and add it to the Footer Resources navigation group.
 - [x] Replace the header Resources link with an accessible submenu for Blog & Guides and Help Center, opening both safely in new tabs.
 - [x] Add regression coverage and verify the updated pricing and desktop/mobile navigation behavior.
+- [x] Fix the Annual billing toggle so the agents DX Platform card visibly switches from the USD 149 monthly price to a distinct annual billing presentation.
+- [x] Add regression coverage and verify the monthly and annual pricing states at desktop and mobile widths.
+- [x] Verify the Annual pricing state at a mobile breakpoint and document that the USD 1,788 / Year presentation remains readable without overflow or broken controls.
+- [x] Confirm the mobile Annual-state verification note is present in the visual-verification record before saving the billing-toggle correction checkpoint.

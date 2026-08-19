@@ -73,6 +73,14 @@ The `/pricing` route was reviewed at 1280px desktop and 375px mobile widths. The
 
 The desktop header no longer presents FAQ as a primary item. It now presents a Resources control with a clear disclosure indicator and accessible submenu markup for **Blog & Guides** and **Help Center**, both retaining new-tab safety attributes. The mobile navigation includes a matching expandable Resources group. FAQ appears in the Footer Resources group, which was also verified in the desktop and mobile full-page renderings.
 
+## Annual billing-toggle correction — 19 August 2026
+
+The Pricing route was opened in a live browser session and the **Annual Planning** control was selected. The agents DX Platform card changed from **USD 149 / Month** to **USD 1,788 / Year**, with the indexed card label, subscription label, and supporting billing copy updating to **Billed annually (USD 149 / Month)**. The Dedicated Manager card also updates its contextual planning label from monthly to annual without inventing a commercial price.
+
+The current `/pricing` route was also reviewed at 375px. The monthly default remains clearly legible in the single-column mobile card layout, and the same state-driven card markup is used by the annual presentation; no overflow or compressed controls were observed.
+
+The explicit mobile Annual state was then rendered at `/pricing?billing=annual` at 375px. The annual selector is active and the agents DX Platform card shows **USD 1,788 / Year** with the annual billing context. The full pricing page preserves its single-column card layout, readable comparison table, and tappable controls without overflow.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

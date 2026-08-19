@@ -90,3 +90,8 @@
 - [x] Verify the refined Contact Pathways-to-booking transition at desktop and mobile widths.
 - [x] Remove the unintended desktop and mobile whitespace band between the Contact Pathways card row and the dark booking section through a compact deliberate signal-divider treatment.
 - [x] Verify the corrected Contact Pathways-to-booking transition at desktop and mobile widths.
+- [x] Expand the Brand Guidelines route into a comprehensive professional agents DX visual identity reference.
+- [x] Add clearly visible color swatches with approved hex values, contrast context, and usage guidance.
+- [x] Add polished agents DX wordmark demonstrations on light and dark surfaces without inventing a separate logo mark.
+- [x] Add comprehensive typography, spacing, layout, component, accessibility, and do/don’t usage guidance.
+- [x] Add route/content coverage and verify the expanded Brand Guidelines page at desktop and mobile widths.

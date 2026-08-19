@@ -61,6 +61,12 @@ Mobile full-page captures of Home and Contact confirm that the wordmark-only hea
 
 The Contact Pathways cards now end with a compact white signal divider—a coral status point between fine neutral rules—before the dark in-frame booking section begins. This creates a deliberate visual hand-off instead of either an oversized empty band or a harsh direct dark-background join. Full-page desktop and 390px mobile renders confirm the divider remains centered, proportionate, and visually quiet while preserving the intended separation.
 
+## Comprehensive Brand Guidelines reference — 19 August 2026
+
+The expanded `/brand-guidelines` route was reviewed in full-page 1280px desktop and 375px mobile renderings. It now provides a professional digital-identity reference with light and dark agents DX wordmark demonstrations, minimum-size and clear-space guidance, six large visible color swatches with HEX/RGB values and application notes, and typography roles for Zen Dots and Inter.
+
+The page also includes voice-and-tone principles, grid and spacing guidance, visible button and card component treatments, accessibility expectations, and practical do/don’t usage rules. On narrow screens, each detailed content surface stacks into a readable single-column flow without horizontal overflow. The wordmark stays wordmark-only throughout; no separate AD badge is introduced.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

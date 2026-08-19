@@ -6,6 +6,7 @@ const marketingPages = readFileSync(new URL("../../pages/MarketingPages.tsx", im
 const contactDirectory = readFileSync(new URL("../../pages/ContactDirectoryPage.tsx", import.meta.url), "utf8");
 const appRoutes = readFileSync(new URL("../../App.tsx", import.meta.url), "utf8");
 const howItWorksPage = readFileSync(new URL("../../pages/HowItWorksPage.tsx", import.meta.url), "utf8");
+const brandGuidelinesPage = readFileSync(new URL("../../pages/BrandGuidelinesPage.tsx", import.meta.url), "utf8");
 const styles = readFileSync(new URL("../../index.css", import.meta.url), "utf8");
 
 describe("Agents DX keyboard accessibility contract", () => {
@@ -87,5 +88,17 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(pageCopy).not.toContain("white-label");
     expect(pageCopy).not.toContain("resell");
     expect(pageCopy).not.toContain("agency plan");
+  });
+
+  it("provides a comprehensive Brand Guidelines route with visible approved identity standards", () => {
+    expect(appRoutes).toContain('path={"/brand-guidelines"} component={BrandGuidelinesPage}');
+    ["#FF6D5A", "#384D5B", "#0F172A", "#000000", "#FFFFFF", "#F8FAFC"].forEach(token => expect(brandGuidelinesPage).toContain(token));
+    expect(brandGuidelinesPage).toContain("BrandMark inverse");
+    expect(brandGuidelinesPage).toContain("Zen Dots");
+    expect(brandGuidelinesPage).toContain("Inter");
+    expect(brandGuidelinesPage).toContain("Visible focus");
+    expect(brandGuidelinesPage).toContain("wordmark-only expression: do not add a separate AD badge");
+    expect(styles).toContain(".brand-guide-hero");
+    expect(styles).toContain(".brand-color-grid");
   });
 });

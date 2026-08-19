@@ -8,6 +8,7 @@ import { AboutPage, ArticlePage, FaqPage, FeaturesPage, HomePage, LegalPage, Pri
 import { ContactDirectoryPage } from "./pages/ContactDirectoryPage";
 import { FooterLandingPage, UseCaseDetailPage, UseCasesPage } from "./pages/UseCasePages";
 import { HowItWorksPage } from "./pages/HowItWorksPage";
+import { BrandGuidelinesPage } from "./pages/BrandGuidelinesPage";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -27,7 +28,7 @@ function Router() {
       <Route path={"/integrations"}>{() => <FooterLandingPage page="integrations" />}</Route>
       <Route path={"/academy"}>{() => <FooterLandingPage page="academy" />}</Route>
       <Route path={"/careers"}>{() => <FooterLandingPage page="careers" />}</Route>
-      <Route path={"/brand-guidelines"}>{() => <FooterLandingPage page="brand-guidelines" />}</Route>
+      <Route path={"/brand-guidelines"} component={BrandGuidelinesPage} />
       <Route path={"/privacy-policy"}>{() => <LegalPage title="Privacy Policy" />}</Route>
       <Route path={"/terms-of-service"}>{() => <LegalPage title="Terms of Service" />}</Route>
       <Route path={"/404"} component={NotFound} />

@@ -85,6 +85,12 @@ The explicit mobile Annual state was then rendered at `/pricing?billing=annual` 
 
 The updated header was reviewed at 1280px and 375px. The header now contains Login and one Book a Demo action; the header-level Get Started action is absent at both breakpoints. A live-browser activation of the desktop header Book a Demo link navigated directly to `/contact`, where the Contact routes and booking paths remain available. Other Book a Demo controls elsewhere on the site retain their in-page calendar behavior.
 
+## Comprehensive Features page — 19 August 2026
+
+The rebuilt `/features` route was reviewed in full-page 1280px desktop and 375px mobile renderings. The page now follows the approved original structure: workforce command hero, three operational roles, intelligence layer, conversation and signal capture, workflows, control and oversight, platform availability, feature questions, and final CTA. The high-contrast system is consistent with agents DX: dark command surfaces, coral state signals, structured off-white content fields, and readable comparison surfaces.
+
+At 375px, all content groups reflow into a readable single-column sequence. The workforce board changes to a stacked status flow, role and workflow cards stack cleanly, the platform comparison remains horizontally scrollable within its bounded container, and the FAQ controls retain clear disclosure affordances. The route contains no white-label, reseller, or agency-plan positioning.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

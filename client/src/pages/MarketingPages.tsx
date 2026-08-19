@@ -82,23 +82,84 @@ export function HomePage() {
   );
 }
 
-const capabilities = [
-  { icon: Sparkles, title: "Signal interpretation", text: "Turn raw inbound activity into a clearer view of the context and potential intent behind it." },
-  { icon: Workflow, title: "Response orchestration", text: "Create considered pathways that maintain momentum without turning every conversation into a rigid script." },
-  { icon: MessageSquareText, title: "Conversation continuity", text: "Keep the important details present as a prospect moves through channels, stages, and team members." },
-  { icon: Target, title: "Intent-aware routing", text: "Make the right next action more visible, whether that is a helpful answer, a discovery path, or a human handoff." },
-  { icon: ChartNoAxesCombined, title: "Operating visibility", text: "Give teams a readable picture of what is generating momentum and where attention is being lost." },
-  { icon: ShieldCheck, title: "Human-led control", text: "Build clear decision points so automation improves judgement rather than obscuring it." },
+const workforceRoles = [
+  { number: "01", icon: MessageCircle, title: "Support that responds", text: "Give customers a useful next step while the context is fresh, without losing the tone your team has built." },
+  { number: "02", icon: Target, title: "Sales that follows through", text: "Turn interest into a considered path by qualifying context, preserving momentum, and surfacing the next move." },
+  { number: "03", icon: CalendarDays, title: "Booking that moves forward", text: "Prepare the right conversation and help people arrive ready for a decision, rather than another round of admin." },
+];
+
+const intelligenceLayers = [
+  { number: "01", icon: Search, title: "Read the signal", text: "Bring the important context into view before a response is prepared." },
+  { number: "02", icon: Layers3, title: "Use approved knowledge", text: "Keep responses grounded in the information and boundaries your team has set." },
+  { number: "03", icon: ShieldCheck, title: "Escalate with context", text: "Bring people in when judgement matters, with the conversation already prepared." },
+  { number: "04", icon: Sparkles, title: "Improve the rhythm", text: "Review what is working and refine the workforce without treating each interaction as isolated." },
+];
+
+const signalCapabilities = [
+  { icon: MessageSquareText, title: "Intent-aware conversations", text: "Recognise what a person is trying to accomplish and keep the response oriented around a useful outcome." },
+  { icon: Workflow, title: "Prepared response paths", text: "Shape clear pathways for common moments while leaving room for the nuance of a real conversation." },
+  { icon: Layers3, title: "Context that stays present", text: "Carry the essential details forward as a customer moves between a conversation, a workflow, and a team member." },
+  { icon: ShieldCheck, title: "Human-ready handoffs", text: "Make the transition from automation to expertise feel considered, timely, and easy to act on." },
+];
+
+const workflowCapabilities = [
+  { number: "01", icon: Compass, title: "Qualification paths", text: "Frame early questions around fit and readiness so the workforce can move a conversation toward the right next step." },
+  { number: "02", icon: Workflow, title: "Follow-up rhythms", text: "Keep momentum visible after the first interaction with a deliberate sequence that never feels like noise." },
+  { number: "03", icon: CalendarDays, title: "Appointment readiness", text: "Give the team and the prospect a clearer hand-off into a meaningful meeting or consultation." },
+  { number: "04", icon: ChartNoAxesCombined, title: "Operational learning", text: "See the moments that create momentum and use that visibility to improve the next workflow." },
+];
+
+const availabilityRows = [
+  ["AI workforce for Support, Sales, and Booking", true, true],
+  ["Unlimited users", true, true],
+  ["Powerful automation tools", true, true],
+  ["Build, deploy, and run agents in one platform", true, true],
+  ["Dedicated manager for strategy and integrations", false, true],
+  ["Optimisation guidance and faster support", false, true],
+];
+
+const featureQuestions = [
+  ["Where should an AI workforce begin?", "Start with the moment where useful context is repeatedly being missed, delayed, or handed over without enough preparation. The first role should solve a visible operating gap before the workforce expands."],
+  ["How do people stay in control?", "Agents DX is built around clear human decision points. Automation prepares, routes, and maintains context; your team remains responsible for the judgement, approvals, and relationships that require it."],
+  ["Can the workforce work with our existing process?", "The platform is designed to fit practical operating rhythms. A Dedicated Manager can help shape the strategy and integration approach when a team needs more guided implementation."],
+  ["What is the difference between Platform and Dedicated Manager?", "Agents DX Platform gives teams the core workforce and automation tools. The Dedicated Manager option adds strategic and integration support, optimisation guidance, and faster support."],
+  ["How do we know what to improve next?", "Operating visibility helps teams see where conversations are moving forward and where attention is being lost, creating a clearer basis for the next refinement."],
 ];
 
 export function FeaturesPage() {
   return (
     <MarketingLayout>
-      <PageHero eyebrow="Features / How it works" title={<>Your AI workforce, built to deliver <em>real results.</em></>} intro="agents DX helps you build, deploy, and run AI agents for Support, Sales, and Booking. Everything you need to automate practical work at scale—no fluff, just results." aside={<><p className="aside-label">System premise</p><h3>Automation that works as an <em>active workforce.</em></h3><p>Build agents around the jobs that create a stronger customer and revenue experience.</p></>} />
-      <section className="feature-section"><div className="shell"><SectionHeading eyebrow="The capability set" title={<>Give every interaction a more <em>useful path.</em></>} intro="Every feature is framed as a practical layer in a conversion system—not an isolated tool." /><div className="capability-grid">{capabilities.map(item => { const Icon = item.icon; return <article className="capability-card" key={item.title}><Icon size={25} strokeWidth={1.7} /><h3>{item.title}</h3><p>{item.text}</p><span className="capability-card__line" /></article>; })}</div></div></section>
-      <section className="workflow-section"><div className="shell"><SectionHeading eyebrow="A measured workflow" title={<>From incoming signal to <em>informed action.</em></>} alignment="center" /><div className="workflow-track">{[["01", "Capture", "Collect the first meaningful signal and preserve its context."], ["02", "Interpret", "Identify the intent, urgency, and next useful question."], ["03", "Orchestrate", "Prepare the right response path or human handoff."], ["04", "Learn", "Review the journey, improve the system, and protect quality."]].map(([number, title, text]) => <article key={number}><span>{number}</span><div className="workflow-track__node"><i /></div><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
-      <section className="dark-split-section"><div className="shell dark-split-section__grid"><div><p className="eyebrow eyebrow--light"><span /> Human judgement, amplified</p><h2>AI should make good operators <em>more available.</em></h2><p>agents DX is designed around a useful boundary: automate repeatable preparation, then put people in the best possible position to act on what they know.</p><ButtonLink href="/contact" variant="primary">Book a Demo</ButtonLink></div><div className="human-loop-diagram"><span className="human-loop-diagram__line human-loop-diagram__line--one" /><span className="human-loop-diagram__line human-loop-diagram__line--two" /><div className="diagram-point diagram-point--a"><Bot size={19} /><small>PREPARE</small></div><div className="diagram-point diagram-point--b"><Search size={19} /><small>CONTEXT</small></div><div className="diagram-point diagram-point--c"><span>DX</span><small>DECIDE</small></div></div></div></section>
-      <FinalCta title={<>Ready for an acquisition system that keeps <em>thinking forward?</em></>} />
+      <section className="features-command-hero">
+        <div className="shell features-command-hero__grid">
+          <div>
+            <p className="eyebrow eyebrow--light"><span /> Features / Your AI workforce</p>
+            <h1>One workforce.<br /><em>Every important moment.</em></h1>
+            <p className="features-command-hero__intro">agents DX brings Support, Sales, and Booking into one practical operating layer—so every incoming signal can become a clearer, more useful next action.</p>
+            <div className="button-row button-row--start"><ButtonLink href="/contact" variant="primary">Get Started</ButtonLink><ButtonLink href="/contact" variant="outline">Book a Demo</ButtonLink></div>
+            <div className="features-command-hero__note"><i /><span>Designed for teams that want more context, not more clutter.</span></div>
+          </div>
+          <aside className="features-command-board" aria-label="Illustrative agents DX workforce operating board">
+            <div className="features-command-board__top"><span>agents DX / WORKFORCE BOARD</span><strong>ACTIVE</strong></div>
+            <div className="features-command-board__flow"><div><span>01</span><b>Signal arrives</b><small>Conversation context</small></div><i /><div><span>02</span><b>Path prepared</b><small>Relevant next move</small></div><i /><div><span>03</span><b>Team ready</b><small>Human judgement, when needed</small></div></div>
+            <div className="features-command-board__footer"><span><i /> Support · Sales · Booking</span><span>CLARITY / ON</span></div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="features-role-section"><div className="shell"><SectionHeading eyebrow="The workforce at a glance" title={<>Three roles. One shared <em>operating rhythm.</em></>} intro="Each role has a distinct job, but every one works from the same context, standards, and view of what matters next." /><div className="features-role-grid">{workforceRoles.map(role => { const Icon = role.icon; return <article key={role.title}><div className="features-role-card__top"><span>{role.number}</span><Icon size={24} strokeWidth={1.7} /></div><h3>{role.title}</h3><p>{role.text}</p><div className="features-role-card__rule"><span>WORKFORCE ROLE</span><i /></div></article>; })}</div></div></section>
+
+      <section className="features-intelligence-section"><div className="shell features-intelligence-section__grid"><div><p className="eyebrow eyebrow--light"><span /> Intelligence layer</p><h2>Make every response more <em>informed.</em></h2><p>Good automation does not simply respond faster. It recognizes the context, works within your standards, and knows when an expert should take the lead.</p><div className="features-intelligence-section__caption"><Bot size={18} /><span>An intelligence layer built around practical operating judgement.</span></div></div><div className="features-intelligence-steps">{intelligenceLayers.map(item => { const Icon = item.icon; return <article key={item.title}><span>{item.number}</span><Icon size={21} strokeWidth={1.8} /><div><h3>{item.title}</h3><p>{item.text}</p></div></article>; })}</div></div></section>
+
+      <section className="features-signal-section"><div className="shell"><SectionHeading eyebrow="Conversation & signal capture" title={<>Context should travel farther than the <em>first message.</em></>} intro="The capability set is designed to make meaningful information visible, route it with care, and keep it useful as work moves between the workforce and your team." /><div className="features-signal-grid">{signalCapabilities.map((capability, index) => { const Icon = capability.icon; return <article key={capability.title}><span>0{index + 1}</span><Icon size={25} strokeWidth={1.7} /><h3>{capability.title}</h3><p>{capability.text}</p></article>; })}</div></div></section>
+
+      <section className="features-workflow-section"><div className="shell"><div className="features-workflow-section__head"><SectionHeading eyebrow="Workflows that convert" title={<>The system behind a more <em>considered next move.</em></>} intro="Build repeatable momentum without reducing every interaction to a rigid script." /><div className="features-workflow-section__legend"><span><i /> Context retained</span><span><i /> Human-ready</span></div></div><div className="features-workflow-grid">{workflowCapabilities.map(item => { const Icon = item.icon; return <article key={item.title}><div><span>{item.number}</span><Icon size={22} strokeWidth={1.7} /></div><h3>{item.title}</h3><p>{item.text}</p><small>Explore the operating layer <ArrowRight size={14} /></small></article>; })}</div></div></section>
+
+      <section className="features-control-section"><div className="shell features-control-section__grid"><div className="features-control-diagram" aria-label="Illustrative oversight flow"><div className="features-control-diagram__status"><span>OVERSIGHT / ACTIVE</span><i /></div><div className="features-control-diagram__orbit"><div><Bot size={22} /><small>PREPARE</small></div><div><Search size={22} /><small>CONTEXT</small></div><div><span>DX</span><small>DECIDE</small></div><div><ShieldCheck size={22} /><small>APPROVE</small></div></div><p>Clear control points for every role.</p></div><div><p className="eyebrow eyebrow--light"><span /> Control, oversight &amp; integration</p><h2>Automation should make good operators <em>more available.</em></h2><p>agents DX protects the useful boundary between repeatable preparation and human judgement. Keep shared visibility across the workforce, establish clear escalation points, and bring the right people in with the right context.</p><div className="features-control-list"><span><ShieldCheck size={17} /> Human-led decision points</span><span><Layers3 size={17} /> Shared operating visibility</span><span><Gauge size={17} /> Practical optimisation signals</span></div><ButtonLink href="/contact" variant="primary">Book a Demo</ButtonLink></div></div></section>
+
+      <section className="features-availability-section"><div className="shell"><SectionHeading eyebrow="Platform availability" title={<>Choose the level of support your <em>workforce needs.</em></>} intro="The platform gives teams the core operating layer. The Dedicated Manager option adds strategic and integration support for teams that want a more guided rollout." /><div className="features-availability-wrap"><table><thead><tr><th>Capability</th><th>agents DX Platform</th><th>+ Dedicated Manager</th></tr></thead><tbody>{availabilityRows.map(([label, platform, manager]) => <tr key={label as string}><td>{label as string}</td><td>{platform ? <Check size={18} strokeWidth={2.6} aria-label="Included" /> : <span>—</span>}</td><td>{manager ? <Check size={18} strokeWidth={2.6} aria-label="Included" /> : <span>—</span>}</td></tr>)}</tbody></table></div><div className="features-availability-section__actions"><ButtonLink href="/pricing" variant="dark">View Pricing</ButtonLink><ButtonLink href="/contact" variant="outline">Book a Demo</ButtonLink></div></div></section>
+
+      <section className="features-faq-section"><div className="shell features-faq-section__grid"><div><p className="eyebrow"><span /> Feature questions</p><h2>Make the next decision with more <em>clarity.</em></h2><p>These are the practical questions teams ask when they are deciding where an AI workforce should begin.</p></div><div className="features-faq-list">{featureQuestions.map(([question, answer], index) => <details key={question}><summary><span>0{index + 1}</span>{question}<ArrowRight size={17} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></div></section>
+      <FinalCta title={<>Put the workforce to work—<em>with purpose.</em></>} intro="Start with the next high-value role, then build a clearer operating system around the moments that matter." />
     </MarketingLayout>
   );
 }

@@ -106,3 +106,10 @@
 - [x] Remove the Get Started action from the desktop and mobile primary header.
 - [x] Make the primary header Book a Demo action navigate to the Contact page instead of opening the in-page booking iframe.
 - [x] Add regression coverage and verify the updated header actions at desktop and mobile widths.
+- [x] Review dmchamp.com/features as a structural reference only; do not copy proprietary copy, assets, or white-label positioning.
+- [x] Present an original professional agents DX Features-page structure for user approval before implementation.
+- [x] Replace the current Features page with the approved comprehensive agents DX product-capability structure.
+- [x] Add original Support, Sales, Booking, intelligence, workflow, oversight, availability, FAQ, and final-CTA content without white-label or agency-reseller positioning.
+- [x] Add regression coverage and validate the upgraded Features route content and exclusions.
+- [x] Verify the redesigned Features page at desktop and mobile widths, document findings, and save a checkpoint.
+- [ ] Confirm the Features-page desktop and mobile verification record is saved, then checkpoint the completed redesign.

@@ -127,4 +127,26 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(siteShell).toContain('if (isDemoAction && demoBehavior === "calendar")');
     expect(siteShell).toContain('href: "https://cal.com/agentsdx/platform"');
   });
+
+  it("provides the approved comprehensive Features-page reference without white-label or agency-reseller positioning", () => {
+    const featuresPage = marketingPages.slice(marketingPages.indexOf("const workforceRoles"), marketingPages.indexOf("export function PricingPage"));
+    [
+      "One workforce.<br /><em>Every important moment.</em>",
+      "Support that responds",
+      "Sales that follows through",
+      "Booking that moves forward",
+      "Intelligence layer",
+      "Conversation & signal capture",
+      "Workflows that convert",
+      "Control, oversight &amp; integration",
+      "Platform availability",
+      "Feature questions",
+      "Put the workforce to work",
+      "+ Dedicated Manager",
+    ].forEach(label => expect(featuresPage).toContain(label));
+    expect(featuresPage.toLowerCase()).not.toContain("white-label");
+    expect(featuresPage.toLowerCase()).not.toContain("resell");
+    expect(featuresPage.toLowerCase()).not.toContain("agency plan");
+    [".features-command-hero", ".features-role-grid", ".features-intelligence-section", ".features-availability-wrap", ".features-faq-list"].forEach(selector => expect(styles).toContain(selector));
+  });
 });

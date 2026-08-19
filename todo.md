@@ -112,4 +112,4 @@
 - [x] Add original Support, Sales, Booking, intelligence, workflow, oversight, availability, FAQ, and final-CTA content without white-label or agency-reseller positioning.
 - [x] Add regression coverage and validate the upgraded Features route content and exclusions.
 - [x] Verify the redesigned Features page at desktop and mobile widths, document findings, and save a checkpoint.
-- [ ] Confirm the Features-page desktop and mobile verification record is saved, then checkpoint the completed redesign.
+- [x] Confirm the Features-page desktop and mobile verification record is saved, then checkpoint the completed redesign.

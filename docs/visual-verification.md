@@ -97,6 +97,12 @@ The revised `/features` route was reviewed in full-page 1280px desktop and 375px
 
 At 375px, the channel orbit canvas, supporting explanation, and four channel rows stack cleanly. The canvas maintains legible labels and state contrast, while the channel list has no horizontal overflow or compressed controls. The section remains channel-specific without duplicating reference-page language or any white-label, reseller, or agency positioning.
 
+## Explicit seven-channel coverage — 19 August 2026
+
+The `/features` Channels section was reviewed after the supplied channel list was added. It now explicitly states that agents DX runs across **WhatsApp, Instagram, Messenger, Telegram, Email, Web chat, and SMS**. The seven-channel network visual and the named channel list both reinforce the same shared-context message without relying on generic channel categories.
+
+At 1280px, seven channel nodes distribute clearly around the workforce core and the corresponding list remains readable. At 375px, the compact channel network retains distinct labels without overlap, while the complete seven-item list stacks cleanly beneath the section explanation. No horizontal overflow or compressed interactions were observed.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

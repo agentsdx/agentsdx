@@ -116,3 +116,5 @@
 - [x] Add Channels as a prominent original selling-point section on the Features page.
 - [x] Explain how website chat, email, social messaging, and booking handoffs share one workforce context without copying reference-site channel claims.
 - [x] Add regression coverage and verify the Channels section at desktop and mobile widths.
+- [x] Explicitly name WhatsApp, Instagram, Messenger, Telegram, Email, Web chat, and SMS in the Features-page Channels selling point.
+- [x] Update regression coverage and verify the explicit seven-channel presentation at desktop and mobile widths.

@@ -15,14 +15,43 @@ const navItems = [
   { href: "/faq", label: "FAQ" },
 ];
 
+type BookingFrameRequest = { title: string; href: string; label?: string };
+const BOOKING_EVENT = "agentsdx:open-booking-frame";
+
+export function openBookingFrame(request: BookingFrameRequest) {
+  window.dispatchEvent(new CustomEvent<BookingFrameRequest>(BOOKING_EVENT, { detail: request }));
+}
+
+function BookingFrameDialog({ booking, onClose }: { booking: BookingFrameRequest; onClose: () => void }) {
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => { if (event.key === "Escape") onClose(); };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [onClose]);
+
+  return (
+    <div className="cal-frame-dialog" role="dialog" aria-modal="true" aria-labelledby="booking-frame-title">
+      <button type="button" className="cal-frame-dialog__backdrop" aria-label="Close booking calendar" onClick={onClose} />
+      <div className="cal-frame-dialog__panel">
+        <div className="cal-frame-dialog__top">
+          <div><p>agents DX / BOOKING</p><h2 id="booking-frame-title">{booking.title}</h2></div>
+          <button type="button" onClick={onClose} aria-label="Close booking calendar"><X size={20} /></button>
+        </div>
+        <iframe title={`${booking.title} booking calendar`} src={booking.href} allow="camera; microphone; fullscreen" />
+        <p className="cal-frame-dialog__fallback">Need a full browser view? <a href={booking.href} target="_blank" rel="noreferrer">Open the calendar in a new tab</a>.</p>
+      </div>
+    </div>
+  );
+}
+
 export function ButtonLink({ href, children, variant = "primary", className = "" }: { href: string; children: ReactNode; variant?: "primary" | "dark" | "outline" | "text"; className?: string }) {
   const classNames = `button-link button-link--${variant} ${className}`.trim();
   const isDemoAction = typeof children === "string" && children.includes("Book a Demo");
   if (isDemoAction) {
     return (
-      <a href="https://cal.com/agentsdx/platform" data-cal-link="agentsdx/platform" data-cal-namespace="platform" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' className={classNames}>
+      <button type="button" className={classNames} onClick={() => openBookingFrame({ title: "Agents DX Platform", href: "https://cal.com/agentsdx/platform" })}>
         <span>{children}</span><ArrowUpRight size={16} strokeWidth={2.4} aria-hidden="true" />
-      </a>
+      </button>
     );
   }
   return (
@@ -111,8 +140,8 @@ export function SiteFooter() {
             </div>
             <div>
               <p className="footer-label">Resources</p>
-              <a href="https://blog.agentsdx.com">Blog &amp; Guides</a>
-              <a href="https://docs.agentsdx.com/">Help Center</a>
+              <a href="https://blog.agentsdx.com" target="_blank" rel="noreferrer">Blog &amp; Guides</a>
+              <a href="https://docs.agentsdx.com/" target="_blank" rel="noreferrer">Help Center</a>
               <Link href="/academy">Agents DX Academy</Link>
             </div>
             <div>
@@ -217,11 +246,19 @@ export function FinalCta({ title = <>Ready to turn every signal into <em>forward
 }
 
 export function MarketingLayout({ children }: { children: ReactNode }) {
+  const [bookingFrame, setBookingFrame] = useState<BookingFrameRequest | null>(null);
+
   useEffect(() => {
     const cal = bootstrapCalEmbed();
     configurePlatformCal(cal);
     configureDedicatedManagerCal(cal);
   }, []);
 
-  return <><SiteHeader /><main>{children}</main><SiteFooter /></>;
+  useEffect(() => {
+    const openFrame = (event: Event) => setBookingFrame((event as CustomEvent<BookingFrameRequest>).detail);
+    window.addEventListener(BOOKING_EVENT, openFrame);
+    return () => window.removeEventListener(BOOKING_EVENT, openFrame);
+  }, []);
+
+  return <><SiteHeader /><main>{children}</main><SiteFooter />{bookingFrame && <BookingFrameDialog booking={bookingFrame} onClose={() => setBookingFrame(null)} />}</>;
 }

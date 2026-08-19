@@ -1,5 +1,5 @@
 import { ArrowRight, CalendarDays, Mail, MessageCircle } from "lucide-react";
-import { MarketingLayout, PageHero } from "@/components/marketing/SiteShell";
+import { MarketingLayout, PageHero, openBookingFrame } from "@/components/marketing/SiteShell";
 
 const bookingOptions = [
   {
@@ -66,15 +66,13 @@ export function ContactDirectoryPage() {
                 <h3>{option.title}</h3>
                 <p>{option.text}</p>
                 <div className="booking-option__signal"><i /> Live calendar is ready</div>
-                <a
-                  href={option.href}
-                  data-cal-link={option.link}
-                  data-cal-namespace={option.namespace}
-                  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+                <button
+                  type="button"
+                  onClick={() => openBookingFrame({ title: option.title, href: option.href, label: option.accent })}
                   className={index === 1 ? "button-link button-link--primary" : "button-link button-link--outline"}
                 >
                   Book Demo <ArrowRight size={16} />
-                </a>
+                </button>
                 <details className="booking-native-fallback">
                   <summary>Open calendar in this page</summary>
                   <div>

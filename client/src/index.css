@@ -31,12 +31,11 @@ button { cursor: pointer; }
 .shell { width: min(100% - 48px, 1180px); margin-inline: auto; }
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(248,250,252,.88); border-bottom: 1px solid rgba(56,77,91,.10); backdrop-filter: blur(18px); }
 .site-header__inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-.brand-mark { display: inline-flex; align-items: center; gap: 10px; width: max-content; flex-shrink: 0; }
-.brand-mark__glyph { width: 31px; height: 31px; display: grid; place-items: center; color: var(--ink); background: var(--coral); border-radius: 9px 9px 9px 2px; transform: skew(-7deg); box-shadow: 3px 3px 0 var(--ink); }
-.brand-mark__glyph span { font-size: 9px; font-weight: 800; letter-spacing: -1px; transform: skew(7deg); }
-.brand-mark__text { font-family: "Zen Dots", monospace; font-size: 14px; letter-spacing: -0.7px; color: var(--night); white-space: nowrap; }
+.brand-mark { display: inline-flex; align-items: center; width: max-content; flex-shrink: 0; }
+.brand-mark__text { font-family: "Zen Dots", monospace; font-size: 16px; letter-spacing: -0.9px; color: var(--night); white-space: nowrap; }
 .brand-mark__text em { color: var(--coral); font-style: normal; }
 .brand-mark__text--inverse { color: white; }
+.button-link[type="button"] { cursor: pointer; font: inherit; appearance: none; }
 .site-nav { display: flex; align-items: center; gap: 27px; margin-left: auto; }
 .site-nav__link { color: #53616d; font-size: 13px; font-weight: 600; transition: color .16s var(--ease-out); }
 .site-nav__link:hover, .site-nav__link--active { color: var(--ink); }

@@ -80,3 +80,7 @@
 - [x] Reintroduce a native, accessible in-page booking fallback for each consultation path while retaining the Cal.com trigger links and direct booking URLs.
 - [x] Remove the unused legacy contact-form component and its stale inquiry-flow copy from the public marketing-page module.
 - [x] Add the supplied official agents DX favicon asset to the site metadata and verify it loads in the browser.
+- [x] Make every Book a Demo action open the appropriate Cal.com booking flow in an in-page iframe rather than redirecting away from the website.
+- [x] Set the external Blog & Guides and Help Center links to open in a new browser tab with safe external-link attributes.
+- [x] Remove the separate AD logo badge and retain only the stylized agents DX wordmark in the header and footer.
+- [x] Add regression coverage and verify the iframe booking, external-link behavior, and wordmark-only logo across desktop and mobile layouts.

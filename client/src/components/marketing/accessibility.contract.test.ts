@@ -30,8 +30,13 @@ describe("Agents DX keyboard accessibility contract", () => {
   it("preserves the supplied tagline and public contact destinations", () => {
     expect(marketingPages).toContain("Built to <em>Engage.</em><br />Trained to Convert.");
     expect(siteShell).toContain("https://cal.com/agentsdx/platform");
+    expect(siteShell).toContain("openBookingFrame");
+    expect(siteShell).toContain('role="dialog"');
+    expect(siteShell).toContain('aria-modal="true"');
     expect(siteShell).toContain("https://app.agentsdx.com/");
     expect(siteShell).toContain("https://docs.agentsdx.com/");
+    expect(siteShell).toContain('href="https://blog.agentsdx.com" target="_blank" rel="noreferrer"');
+    expect(siteShell).toContain('href="https://docs.agentsdx.com/" target="_blank" rel="noreferrer"');
     ["Platform", "Solutions", "Resources", "Company", "Features", "Pricing", "Integrations", "Small Business", "E-commerce", "Agencies", "Enterprise", "Startups", "Blog &amp; Guides", "Help Center", "Agents DX Academy", "About Us", "Contact", "Careers", "Brand Guidelines"].forEach(label => expect(siteShell).toContain(label));
     [
       "https://www.facebook.com/AgentsDXai",
@@ -51,14 +56,19 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(contactDirectory).toContain('href: "https://cal.com/agentsdx/platform"');
     expect(contactDirectory).toContain('link: "agentsdx/platform-dedicated-manager"');
     expect(contactDirectory).toContain('href: "https://cal.com/agentsdx/platform-dedicated-manager"');
-    expect(contactDirectory).toContain('data-cal-link={option.link}');
-    expect(contactDirectory).toContain('data-cal-namespace={option.namespace}');
-    expect(contactDirectory).toContain('data-cal-config');
+    expect(contactDirectory).toContain('onClick={() => openBookingFrame({ title: option.title, href: option.href, label: option.accent })}');
     expect(contactDirectory).toContain("direct booking fallback");
     expect(contactDirectory).toContain('className="booking-native-fallback"');
     expect(contactDirectory).toContain("in-page booking calendar");
     expect(contactDirectory).toContain("Available 24/7");
     expect(contactDirectory).not.toContain("Prepare Demo Request");
+  });
+
+  it("uses an agents DX wordmark without the separate AD badge", () => {
+    const brandMark = readFileSync(new URL("./BrandMark.tsx", import.meta.url), "utf8");
+    expect(brandMark).toContain("agents <em>DX</em>");
+    expect(brandMark).not.toContain("brand-mark__glyph");
+    expect(brandMark).not.toContain(">AD<");
   });
 
   it("wires every original Use Cases and footer-page destination into both the route registry and footer navigation", () => {

@@ -51,6 +51,12 @@ The form-free `/contact` route was reviewed in full-page desktop and 390px mobil
 
 The finalized layout removes preview-only blank calendar frames and presents the approved Cal.com booking triggers directly from the two booking cards, with their direct booking destinations preserved as fallbacks. Both desktop and mobile renders retain the contact-path hierarchy, two-card consultation choice, and compact footer without overflow or compressed call-to-action controls.
 
+## Global booking and wordmark revision — 19 August 2026
+
+The separate AD badge has been removed from the shared header and footer identity treatment; the logo now renders as the approved stylized **agents DX** wordmark only. A desktop browser interaction with the global header **Book a Demo** button opened the in-page booking dialog without changing the route. The dialog mounted the `Agents DX Platform` calendar iframe, included native close controls, and retained a safe new-tab calendar fallback. The external **Blog & Guides** and **Help Center** footer destinations were inspected in the browser and both expose `target="_blank"` with `rel="noreferrer"`.
+
+Mobile full-page captures of Home and Contact confirm that the wordmark-only header remains legible, the mobile menu retains Login access, all Book a Demo controls remain comfortably tappable, the two contact booking paths retain their visual distinction, and the simplified footer remains readable without horizontal overflow.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

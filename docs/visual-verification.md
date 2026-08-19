@@ -67,6 +67,12 @@ The expanded `/brand-guidelines` route was reviewed in full-page 1280px desktop 
 
 The page also includes voice-and-tone principles, grid and spacing guidance, visible button and card component treatments, accessibility expectations, and practical do/don’t usage rules. On narrow screens, each detailed content surface stacks into a readable single-column flow without horizontal overflow. The wordmark stays wordmark-only throughout; no separate AD badge is introduced.
 
+## Platform pricing and Resources navigation update — 19 August 2026
+
+The `/pricing` route was reviewed at 1280px desktop and 375px mobile widths. The **agents DX Platform** card now displays **USD 149 / Month** with an explicit monthly-billing label; the Dedicated Manager card retains its tailored-scope treatment. The two plan cards, comparison surface, CTA controls, and footer remain readable without crowding at both breakpoints.
+
+The desktop header no longer presents FAQ as a primary item. It now presents a Resources control with a clear disclosure indicator and accessible submenu markup for **Blog & Guides** and **Help Center**, both retaining new-tab safety attributes. The mobile navigation includes a matching expandable Resources group. FAQ appears in the Footer Resources group, which was also verified in the desktop and mobile full-page renderings.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

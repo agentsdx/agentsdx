@@ -1,4 +1,4 @@
-import { Menu, X, ArrowUpRight, Linkedin, Youtube } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaSnapchat, FaTiktok, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { Link, useLocation } from "wouter";
@@ -11,8 +11,6 @@ const navItems = [
   { href: "/use-cases", label: "Use Cases" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "Our Story" },
-  { href: "/resources", label: "Resources" },
-  { href: "/faq", label: "FAQ" },
 ];
 
 type BookingFrameRequest = { title: string; href: string; label?: string };
@@ -64,6 +62,7 @@ export function ButtonLink({ href, children, variant = "primary", className = ""
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const [location] = useLocation();
 
   return (
@@ -76,6 +75,15 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <div className="site-nav__resources">
+            <button type="button" className={resourcesOpen ? "site-nav__link site-nav__resources-trigger site-nav__link--active" : "site-nav__link site-nav__resources-trigger"} aria-haspopup="true" aria-expanded={resourcesOpen} aria-controls="resources-menu" onClick={() => setResourcesOpen(!resourcesOpen)}>
+              Resources <ChevronDown size={14} aria-hidden="true" />
+            </button>
+            {resourcesOpen && <div id="resources-menu" className="site-nav__resources-menu" aria-label="Resources links">
+              <a href="https://blog.agentsdx.com" target="_blank" rel="noreferrer" onClick={() => setResourcesOpen(false)}>Blog &amp; Guides <ArrowUpRight size={13} aria-hidden="true" /></a>
+              <a href="https://docs.agentsdx.com/" target="_blank" rel="noreferrer" onClick={() => setResourcesOpen(false)}>Help Center <ArrowUpRight size={13} aria-hidden="true" /></a>
+            </div>}
+          </div>
         </nav>
         <div className="site-header__actions">
           <a href="https://app.agentsdx.com/" className="site-header__login">Login</a>
@@ -94,7 +102,8 @@ export function SiteHeader() {
                 <span>0{index + 1}</span>{item.label}<ArrowUpRight size={18} aria-hidden="true" />
               </Link>
             ))}
-            <a href="https://app.agentsdx.com/" className="mobile-nav__link" onClick={() => setOpen(false)}><span>0{navItems.length + 1}</span>Login<ArrowUpRight size={18} aria-hidden="true" /></a>
+            <details className="mobile-nav__resources"><summary><span>0{navItems.length + 1}</span>Resources<ChevronDown size={18} aria-hidden="true" /></summary><div><a href="https://blog.agentsdx.com" target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Blog &amp; Guides <ArrowUpRight size={15} aria-hidden="true" /></a><a href="https://docs.agentsdx.com/" target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Help Center <ArrowUpRight size={15} aria-hidden="true" /></a></div></details>
+            <a href="https://app.agentsdx.com/" className="mobile-nav__link" onClick={() => setOpen(false)}><span>0{navItems.length + 2}</span>Login<ArrowUpRight size={18} aria-hidden="true" /></a>
           </nav>
           <ButtonLink href="/pricing" variant="outline" className="mobile-nav__cta mobile-nav__start">Get Started</ButtonLink>
           <ButtonLink href="/contact" variant="primary" className="mobile-nav__cta">Book a Demo</ButtonLink>
@@ -143,6 +152,7 @@ export function SiteFooter() {
               <a href="https://blog.agentsdx.com" target="_blank" rel="noreferrer">Blog &amp; Guides</a>
               <a href="https://docs.agentsdx.com/" target="_blank" rel="noreferrer">Help Center</a>
               <Link href="/academy">Agents DX Academy</Link>
+              <Link href="/faq">FAQ</Link>
             </div>
             <div>
               <p className="footer-label">Company</p>

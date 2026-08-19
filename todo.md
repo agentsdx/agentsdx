@@ -95,3 +95,7 @@
 - [x] Add polished agents DX wordmark demonstrations on light and dark surfaces without inventing a separate logo mark.
 - [x] Add comprehensive typography, spacing, layout, component, accessibility, and do/don’t usage guidance.
 - [x] Add route/content coverage and verify the expanded Brand Guidelines page at desktop and mobile widths.
+- [x] Set the agents DX Platform plan price to USD 149 per month in all pricing displays.
+- [x] Remove FAQ from the primary header and add it to the Footer Resources navigation group.
+- [x] Replace the header Resources link with an accessible submenu for Blog & Guides and Help Center, opening both safely in new tabs.
+- [x] Add regression coverage and verify the updated pricing and desktop/mobile navigation behavior.

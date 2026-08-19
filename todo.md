@@ -103,3 +103,6 @@
 - [x] Add regression coverage and verify the monthly and annual pricing states at desktop and mobile widths.
 - [x] Verify the Annual pricing state at a mobile breakpoint and document that the USD 1,788 / Year presentation remains readable without overflow or broken controls.
 - [x] Confirm the mobile Annual-state verification note is present in the visual-verification record before saving the billing-toggle correction checkpoint.
+- [x] Remove the Get Started action from the desktop and mobile primary header.
+- [x] Make the primary header Book a Demo action navigate to the Contact page instead of opening the in-page booking iframe.
+- [x] Add regression coverage and verify the updated header actions at desktop and mobile widths.

@@ -118,4 +118,13 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(styles).toContain(".site-nav__resources-menu");
     expect(styles).toContain(".mobile-nav__resources");
   });
+
+  it("keeps the header focused on Login and a Contact-page demo route without removing in-page booking from other actions", () => {
+    expect(siteShell).toContain('className="site-header__cta" demoBehavior="link">Book a Demo</ButtonLink>');
+    expect(siteShell).toContain('className="mobile-nav__cta" demoBehavior="link">Book a Demo</ButtonLink>');
+    expect(siteShell).not.toContain('className="site-header__start">Get Started</ButtonLink>');
+    expect(siteShell).not.toContain('className="mobile-nav__cta mobile-nav__start">Get Started</ButtonLink>');
+    expect(siteShell).toContain('if (isDemoAction && demoBehavior === "calendar")');
+    expect(siteShell).toContain('href: "https://cal.com/agentsdx/platform"');
+  });
 });

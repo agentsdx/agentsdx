@@ -42,10 +42,10 @@ function BookingFrameDialog({ booking, onClose }: { booking: BookingFrameRequest
   );
 }
 
-export function ButtonLink({ href, children, variant = "primary", className = "" }: { href: string; children: ReactNode; variant?: "primary" | "dark" | "outline" | "text"; className?: string }) {
+export function ButtonLink({ href, children, variant = "primary", className = "", demoBehavior = "calendar" }: { href: string; children: ReactNode; variant?: "primary" | "dark" | "outline" | "text"; className?: string; demoBehavior?: "calendar" | "link" }) {
   const classNames = `button-link button-link--${variant} ${className}`.trim();
   const isDemoAction = typeof children === "string" && children.includes("Book a Demo");
-  if (isDemoAction) {
+  if (isDemoAction && demoBehavior === "calendar") {
     return (
       <button type="button" className={classNames} onClick={() => openBookingFrame({ title: "Agents DX Platform", href: "https://cal.com/agentsdx/platform" })}>
         <span>{children}</span><ArrowUpRight size={16} strokeWidth={2.4} aria-hidden="true" />
@@ -87,8 +87,7 @@ export function SiteHeader() {
         </nav>
         <div className="site-header__actions">
           <a href="https://app.agentsdx.com/" className="site-header__login">Login</a>
-          <ButtonLink href="/pricing" variant="text" className="site-header__start">Get Started</ButtonLink>
-          <ButtonLink href="/contact" variant="primary" className="site-header__cta">Book a Demo</ButtonLink>
+          <ButtonLink href="/contact" variant="primary" className="site-header__cta" demoBehavior="link">Book a Demo</ButtonLink>
           <button className="menu-trigger" type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} onClick={() => setOpen(!open)}>
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -105,8 +104,7 @@ export function SiteHeader() {
             <details className="mobile-nav__resources"><summary><span>0{navItems.length + 1}</span>Resources<ChevronDown size={18} aria-hidden="true" /></summary><div><a href="https://blog.agentsdx.com" target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Blog &amp; Guides <ArrowUpRight size={15} aria-hidden="true" /></a><a href="https://docs.agentsdx.com/" target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Help Center <ArrowUpRight size={15} aria-hidden="true" /></a></div></details>
             <a href="https://app.agentsdx.com/" className="mobile-nav__link" onClick={() => setOpen(false)}><span>0{navItems.length + 2}</span>Login<ArrowUpRight size={18} aria-hidden="true" /></a>
           </nav>
-          <ButtonLink href="/pricing" variant="outline" className="mobile-nav__cta mobile-nav__start">Get Started</ButtonLink>
-          <ButtonLink href="/contact" variant="primary" className="mobile-nav__cta">Book a Demo</ButtonLink>
+          <ButtonLink href="/contact" variant="primary" className="mobile-nav__cta" demoBehavior="link">Book a Demo</ButtonLink>
         </div>
       )}
     </header>

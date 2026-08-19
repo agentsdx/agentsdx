@@ -81,6 +81,10 @@ The current `/pricing` route was also reviewed at 375px. The monthly default rem
 
 The explicit mobile Annual state was then rendered at `/pricing?billing=annual` at 375px. The annual selector is active and the agents DX Platform card shows **USD 1,788 / Year** with the annual billing context. The full pricing page preserves its single-column card layout, readable comparison table, and tappable controls without overflow.
 
+## Header action simplification — 19 August 2026
+
+The updated header was reviewed at 1280px and 375px. The header now contains Login and one Book a Demo action; the header-level Get Started action is absent at both breakpoints. A live-browser activation of the desktop header Book a Demo link navigated directly to `/contact`, where the Contact routes and booking paths remain available. Other Book a Demo controls elsewhere on the site retain their in-page calendar behavior.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

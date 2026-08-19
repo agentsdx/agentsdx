@@ -103,6 +103,20 @@ The `/features` Channels section was reviewed after the supplied channel list wa
 
 At 1280px, seven channel nodes distribute clearly around the workforce core and the corresponding list remains readable. At 375px, the compact channel network retains distinct labels without overlap, while the complete seven-item list stacks cleanly beneath the section explanation. No horizontal overflow or compressed interactions were observed.
 
+## Contact demo-section navigation — 19 August 2026
+
+The Contact-page **Schedule a Call** pathway, including its **Book a demo with our experts** text, now uses an accessible anchor with a direct smooth-scroll handler and a `#demo-booking` fallback target. A live browser activation confirmed that the page moves to the in-frame booking section with the target positioned beneath the sticky header; the URL updates to `/contact#demo-booking`.
+
+The 375px full-page review confirms that the Schedule a Call pathway remains visually clear between Email Us and Live Chat, and the booking section follows immediately after the deliberate signal divider in a readable single-column flow. The responsive anchor target has no layout overflow.
+
+A direct Schedule a Call activation was exercised with a 375px by 812px interaction viewport, followed by an explicit `/contact#demo-booking` route check. The booking target resolves beneath the sticky header and displays the expected in-frame booking heading and cards; the same `scrollIntoView` handler and target element are used at all responsive breakpoints.
+
+The exact live handler was also remeasured after its smooth-scroll interval. It set the `#demo-booking` fragment, moved the document to `scrollY: 1288`, and placed the booking target at approximately `92px` below the viewport top—matching the sticky-header offset. The Contact component now also resolves the same fragment before paint on fresh loads, ensuring the responsive target remains available when the booking URL is opened directly.
+
+The interaction was then verified under true mobile device metrics (**375px × 812px**). From a fresh Contact-page load, Schedule a Call moved the document from `scrollY: 0` to `scrollY: 1787`, set `#demo-booking`, and placed the booking target at approximately `92px` below the top of the mobile viewport. This confirms the requested mobile interaction lands directly on the demo section beneath the sticky header.
+
+Finally, a **fresh direct mobile load** of `/contact#demo-booking` was measured after the fragment-load enhancement. At true 375px × 812px device metrics, the page retained `#demo-booking`, loaded at `scrollY: 1787`, and placed the demo booking section approximately `92px` below the viewport top. This independently verifies both the live click path and the direct responsive fragment destination.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

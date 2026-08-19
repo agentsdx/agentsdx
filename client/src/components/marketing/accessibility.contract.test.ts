@@ -23,6 +23,17 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(contactDirectory).toContain('href="mailto:cs@AgentsDX.com"');
   });
 
+  it("connects the Contact-page Schedule a Call pathway directly to the in-page demo booking section", () => {
+    expect(contactDirectory).toContain('href="#demo-booking"');
+    expect(contactDirectory).toContain('aria-label="Schedule a Call: scroll to demo booking options"');
+    expect(contactDirectory).toContain('scrollIntoView({ behavior: "smooth", block: "start" })');
+    expect(contactDirectory).toContain('window.location.hash !== "#demo-booking"');
+    expect(contactDirectory).toContain('scrollIntoView({ behavior: "auto", block: "start" })');
+    expect(contactDirectory).toContain("useLayoutEffect");
+    expect(contactDirectory).toContain('id="demo-booking" className="booking-section"');
+    expect(styles).toContain("#demo-booking { scroll-margin-top: 92px; }");
+  });
+
   it("maintains a visible keyboard focus treatment for links, controls, and form fields", () => {
     expect(styles).toContain(":focus-visible");
     expect(styles).toContain("outline: 3px solid var(--coral)");

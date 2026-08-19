@@ -1,4 +1,5 @@
 import { ArrowRight, CalendarDays, Mail, MessageCircle } from "lucide-react";
+import { useLayoutEffect } from "react";
 import { MarketingLayout, PageHero, openBookingFrame } from "@/components/marketing/SiteShell";
 
 const bookingOptions = [
@@ -23,6 +24,11 @@ const bookingOptions = [
 ] as const;
 
 export function ContactDirectoryPage() {
+  useLayoutEffect(() => {
+    if (window.location.hash !== "#demo-booking") return;
+    document.getElementById("demo-booking")?.scrollIntoView({ behavior: "auto", block: "start" });
+  }, []);
+
   return (
     <MarketingLayout>
       <PageHero
@@ -45,15 +51,15 @@ export function ContactDirectoryPage() {
             <article className="contact-path contact-path--live">
               <span>02</span><MessageCircle size={25} strokeWidth={1.6} /><h3>Live Chat</h3><p>Chat with our support team</p><strong>Available 24/7</strong><i aria-label="Support availability indicator" /><small>Live-chat entry point is available in the agents DX application.</small>
             </article>
-            <article className="contact-path">
+            <a href="#demo-booking" className="contact-path" aria-label="Schedule a Call: scroll to demo booking options" onClick={(event) => { event.preventDefault(); document.getElementById("demo-booking")?.scrollIntoView({ behavior: "smooth", block: "start" }); window.history.replaceState(null, "", "#demo-booking"); }}>
               <span>03</span><CalendarDays size={25} strokeWidth={1.6} /><h3>Schedule a Call</h3><p>Book a demo with our experts</p><strong>Choose a booking path below</strong><ArrowRight size={17} />
-            </article>
+            </a>
           </div>
           <div className="contact-directory__bridge" aria-hidden="true"><span /><i /><span /></div>
         </div>
       </section>
 
-      <section className="booking-section">
+      <section id="demo-booking" className="booking-section">
         <div className="shell">
           <div className="booking-section__head">
             <p className="eyebrow eyebrow--light"><span /> In-frame booking</p>

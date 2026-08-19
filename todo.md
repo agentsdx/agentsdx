@@ -118,3 +118,12 @@
 - [x] Add regression coverage and verify the Channels section at desktop and mobile widths.
 - [x] Explicitly name WhatsApp, Instagram, Messenger, Telegram, Email, Web chat, and SMS in the Features-page Channels selling point.
 - [x] Update regression coverage and verify the explicit seven-channel presentation at desktop and mobile widths.
+- [x] Make the Contact-page Schedule a Call pathway scroll to the on-page demo booking section.
+- [x] Make the Contact-page Book a demo with our experts action scroll to the on-page demo booking section.
+- [x] Add regression coverage and verify the Contact-page demo-section navigation at desktop and mobile widths.
+- [x] Ensure the Schedule a Call anchor invokes a reliable smooth scroll to the demo booking section in the live browser, not only a hash target.
+- [x] Perform and document a live mobile-width activation of Schedule a Call that scrolls to the demo booking section.
+- [x] Ensure a fresh mobile Contact-page load with #demo-booking resolves to the demo section, then verify the responsive anchor destination.
+- [x] Confirm a fresh mobile /contact#demo-booking page load lands at the demo booking section before saving the Contact navigation checkpoint.
+- [x] Perform and document a true fresh mobile-width /contact#demo-booking load before checkpointing the Contact navigation change.
+- [ ] Confirm the fresh mobile verification note is recorded, then checkpoint the completed Contact demo-section navigation change.

@@ -153,6 +153,12 @@ The Contact Live Chat chooser was restyled as an original light editorial agents
 
 At true 375px × 812px mobile metrics, the corrected dialog is 502px high, keeps the full **“Choose the conversation route.”** title visible, and holds each arrow within its respective channel row. Live desktop verification confirms a 580px dialog with all four channels present, a light gradient background, an accessible close control, a dark title color, and aligned arrows at consistent row positions.
 
+## Transparent Live Chat backdrop — 20 August 2026
+
+The modal backdrop now uses a fully transparent background with no backdrop blur, leaving the Contact-page content visible behind the opened channel chooser. The dialog itself remains a fully opaque light editorial surface to preserve visual separation and readable controls. The automated regression suite remains green with **31 passing tests**, and TypeScript validation completes without errors.
+
+A live desktop Contact-page capture confirms that the hero, contact-pathway cards, and surrounding page surfaces remain clearly visible around the opened dialog. Browser inspection reports the overlay as `rgba(0, 0, 0, 0)` with `backdrop-filter: none`, while the dialog retains its opaque light gradient, close control, and four readable channel rows.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

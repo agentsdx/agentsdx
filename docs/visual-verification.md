@@ -123,6 +123,12 @@ The Home, Features, and How It Works visual surfaces now include a restrained mo
 
 Desktop and 375px mobile previews for all three pages retain the existing hierarchy, readability, and responsive layouts. In a live browser, the Home Signal Room reported active `radar-breathe` and `signal-float` animations. A `prefers-reduced-motion: reduce` override stops the non-essential animation sequence, and a regression contract covers both the motion-safe and reduced-motion paths.
 
+## Expanded Privacy Policy and Terms of Service — 20 August 2026
+
+The `/privacy-policy` and `/terms-of-service` routes were reviewed in full-page 1280px desktop and 375px mobile renderings. Both now use a professional legal-document layout: a concise dark document hero, an explicit working-draft and counsel-review notice, an in-page section index, and a legible single-column substantive document.
+
+The Privacy Policy covers collection, uses, legal bases, sharing, retention, security, transfers, choices, cookies, children, updates, and a privacy contact route. The Terms of Service covers acceptance, accounts, subscriptions, acceptable use, customer data and AI-assisted output, intellectual property, integrations, availability, confidentiality, disclaimers, liability, indemnity, suspension, and governing-law placeholders. At 375px, the document index reflows before the content, notices remain prominent, and long sections preserve readable line length without horizontal overflow.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

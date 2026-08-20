@@ -147,6 +147,29 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(siteShell).toContain('href: "https://cal.com/agentsdx/platform"');
   });
 
+  it("provides professionally structured Privacy Policy and Terms of Service working drafts", () => {
+    expect(appRoutes).toContain('path={"/privacy-policy"}');
+    expect(appRoutes).toContain('path={"/terms-of-service"}');
+    [
+      "Working draft — legal review required",
+      "Information we may collect",
+      "How we may use information",
+      "How information may be shared",
+      "Your choices and rights",
+      "Privacy contact",
+      "Acceptance and scope",
+      "Subscriptions, fees, and renewals",
+      "Acceptable use",
+      "Customer data and AI-assisted output",
+      "Limitation of liability",
+      "Governing law and disputes",
+      "cs@AgentsDX.com",
+    ].forEach(label => expect(marketingPages).toContain(label));
+    expect(styles).toContain(".legal-hero");
+    expect(styles).toContain(".legal-page__nav");
+    expect(styles).toContain(".legal-page__document");
+  });
+
   it("provides the approved comprehensive Features-page reference without white-label or agency-reseller positioning", () => {
     const featuresPage = marketingPages.slice(marketingPages.indexOf("const workforceRoles"), marketingPages.indexOf("export function PricingPage"));
     [

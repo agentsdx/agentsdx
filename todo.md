@@ -130,3 +130,7 @@
 - [x] Add a restrained premium CSS motion layer to the Home, Features, and How It Works visual surfaces.
 - [x] Animate signal paths, status indicators, network nodes, and selected section reveals without introducing video-heavy or distracting behavior.
 - [x] Respect reduced-motion preferences, add regression coverage, and verify the animated experience at desktop and mobile widths.
+- [x] Expand the Privacy Policy into a professionally structured working draft covering data collection, uses, sharing, retention, security, choices, and contact routes.
+- [x] Expand the Terms of Service into a professionally structured working draft covering service access, accounts, acceptable use, intellectual property, disclaimers, liability, and governing-law placeholders.
+- [x] Clearly identify both legal pages as working drafts requiring qualified legal review where entity, jurisdiction, or regulatory details are not supplied.
+- [x] Add regression coverage and verify the revised Privacy and Terms pages at desktop and mobile widths.

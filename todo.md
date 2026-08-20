@@ -149,3 +149,4 @@
 - [x] Update regression coverage and verify the restyled Live Chat dialog at desktop and mobile widths.
 - [x] Correct the mobile editorial dialog so its complete title remains visible and each channel arrow stays aligned within its row.
 - [x] Make the backdrop behind the opened Contact-page Live Chat dialog transparent enough to keep the Contact page clearly visible.
+- [x] Set the opened Contact-page Live Chat backdrop to 50% opacity while preserving dialog readability.

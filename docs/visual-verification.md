@@ -153,11 +153,13 @@ The Contact Live Chat chooser was restyled as an original light editorial agents
 
 At true 375px × 812px mobile metrics, the corrected dialog is 502px high, keeps the full **“Choose the conversation route.”** title visible, and holds each arrow within its respective channel row. Live desktop verification confirms a 580px dialog with all four channels present, a light gradient background, an accessible close control, a dark title color, and aligned arrows at consistent row positions.
 
-## Transparent Live Chat backdrop — 20 August 2026
+## 50% Live Chat backdrop — 20 August 2026
 
-The modal backdrop now uses a fully transparent background with no backdrop blur, leaving the Contact-page content visible behind the opened channel chooser. The dialog itself remains a fully opaque light editorial surface to preserve visual separation and readable controls. The automated regression suite remains green with **31 passing tests**, and TypeScript validation completes without errors.
+The modal backdrop now uses a **50% deep-slate overlay** with no backdrop blur, preserving a visible Contact-page context while restoring clear visual separation behind the opened channel chooser. The dialog itself remains a fully opaque light editorial surface to preserve readable controls. The automated regression suite remains green with **31 passing tests**, and TypeScript validation completes without errors.
 
-A live desktop Contact-page capture confirms that the hero, contact-pathway cards, and surrounding page surfaces remain clearly visible around the opened dialog. Browser inspection reports the overlay as `rgba(0, 0, 0, 0)` with `backdrop-filter: none`, while the dialog retains its opaque light gradient, close control, and four readable channel rows.
+A live desktop browser check confirms that the dialog opens with all four channel rows present. Browser inspection reports the overlay as `rgba(15, 23, 42, 0.5)` with `backdrop-filter: none`, while the dialog retains its opaque light gradient and close control.
+
+The desktop visual capture confirms the intended balance: the Contact-page heading, operating-context panel, and contact pathways remain discernible through the 50% overlay, while the channel chooser remains the unmistakable active surface.
 
 ### Complete route-by-route verification matrix
 

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Zen+Dots&display=swap');
 @import "tailwindcss";
 
-body .live-chat-dialog__backdrop { background: transparent; backdrop-filter: none; }
+body .live-chat-dialog__backdrop { background: rgba(15,23,42,.5); backdrop-filter: none; }
 
 .live-chat-dialog.live-chat-dialog--compact.live-chat-dialog--editorial h2 { color: var(--night); }.live-chat-dialog.live-chat-dialog--compact.live-chat-dialog--editorial h2 em { color: var(--coral); }.live-chat-dialog.live-chat-dialog--compact.live-chat-dialog--editorial .live-chat-channel { grid-template-columns: 40px minmax(0, 1fr) 22px; }.live-chat-dialog.live-chat-dialog--compact.live-chat-dialog--editorial .live-chat-channel__arrow { display: block; grid-column: 3; grid-row: 1; justify-self: end; }
 

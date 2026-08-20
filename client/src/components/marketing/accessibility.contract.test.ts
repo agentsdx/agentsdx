@@ -39,6 +39,14 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(styles).toContain("outline: 3px solid var(--coral)");
   });
 
+  it("keeps premium interface motion lightweight and accessible to reduced-motion preferences", () => {
+    expect(styles).toContain("@media (prefers-reduced-motion: no-preference)");
+    expect(styles).toContain("@media (prefers-reduced-motion: reduce)");
+    expect(styles).toContain("radar-sweep");
+    expect(styles).toContain("channel-centered-drift");
+    expect(styles).toContain("animation-iteration-count: 1 !important");
+  });
+
   it("preserves the supplied tagline and public contact destinations", () => {
     expect(marketingPages).toContain("Built to <em>Engage.</em><br />Trained to Convert.");
     expect(siteShell).toContain("https://cal.com/agentsdx/platform");

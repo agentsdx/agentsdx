@@ -154,3 +154,45 @@ h3 { margin-bottom: 12px; font-size: 20px; line-height: 1.1; font-weight: 750; }
 
 @media (max-width: 960px) { .home-hero__grid { grid-template-columns: 1fr; }.home-hero__visual { max-width: 590px; width: 100%; min-height: 420px; }.signal-rail__grid { grid-template-columns: repeat(3, 1fr); }.signal-rail__lead { grid-column: span 3; min-height: auto; }.story-section__grid, .dark-split-section__grid, .about-narrative__grid, .team-section__grid, .faq-section__grid { grid-template-columns: 1fr; gap: 45px; }.story-section__sticky, .faq-section aside { position: static; }.platform-grid { grid-template-columns: 1fr 1fr; }.platform-card--large { grid-column: span 2; grid-row: auto; min-height: 400px; }.capability-grid { grid-template-columns: repeat(2,1fr); }.workflow-track { grid-template-columns: repeat(2,1fr); gap: 30px 0; }.contact-section__grid { grid-template-columns: 1fr; }.calendar-placeholder { min-height: 470px; }.pricing-grid { grid-template-columns: 1fr; max-width: 600px; margin-inline: auto; }.pricing-card--featured { margin-top: 0; }.pricing-card { min-height: auto; }.pricing-card__audience { min-height: auto; }.pricing-card ul { flex: initial; }.about-narrative__grid { gap: 32px; }.about-narrative__grid > div { padding-top: 0; }.resources-grid { grid-template-columns: repeat(2,1fr); }.article-card:last-child { grid-column: span 2; }.article-card:last-child .article-card__art { min-height: 230px; }.article-page__visual { height: 260px; } }
 @media (max-width: 620px) { .home-hero { min-height: auto; padding-top: 83px; }.home-hero__visual { min-height: 370px; }.visual-signal--one { top: 19%; right: 3%; }.visual-signal--two { bottom: 23%; left: 2%; }.visual-signal--three { display: none; }.signal-rail { padding-bottom: 54px; }.signal-rail__grid { grid-template-columns: 1fr; }.signal-rail__lead { grid-column: span 1; }.signal-card, .signal-rail__lead { min-height: 180px; }.story-section__grid { gap: 35px; }.story-step { grid-template-columns: 39px 1fr; }.platform-section__head { display: block; }.platform-section__head .section-heading { margin-bottom: 27px; }.platform-section__head > .button-link { margin-bottom: 38px; }.platform-grid, .capability-grid, .values-grid, .resources-grid { grid-template-columns: 1fr; }.platform-card--large { grid-column: auto; min-height: 390px; }.workflow-track { grid-template-columns: 1fr; gap: 20px; }.workflow-track__node { height: 31px; }.human-loop-diagram { min-height: 335px; transform: scale(.88); transform-origin: left center; margin-right: -18%; }.pricing-topline { display: grid; gap: 15px; align-items: start; }.billing-toggle { width: max-content; }.comparison-section { overflow: hidden; }.about-narrative__lead { font-size: 34px; }.values-grid article { min-height: 210px; }.team-section__grid { gap: 28px; }.contact-form-wrap { padding: 33px 24px; }.calendar-placeholder__body { padding: 42px 26px; }.calendar-placeholder { min-height: 440px; }.article-card:last-child { grid-column: auto; }.article-card:last-child .article-card__art { min-height: 185px; }.article-page__header { padding-bottom: 45px; }.article-page__visual { height: 200px; }.article-page__visual > div > div { font-size: 10px; }.article-page__content { padding-top: 50px; padding-bottom: 74px; }.article-page__content h2 { font-size: 27px; }.article-page__content section p { font-size: 16px; }.article-page__content aside { padding: 25px; }.faq-groups summary { font-size: 15px; }.faq-groups details p { padding-right: 15px; }.site-footer__nav { gap: 25px 14px; } }
+
+/* Premium interface motion — transform and opacity only, opt-in for motion-safe devices. */
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero::before, .how-hero::before { animation: grid-drift 16s linear infinite; }
+  .home-hero::after, .how-hero::after { animation: ambient-orbit 8s var(--ease-in-out) infinite alternate; }
+  .home-hero__visual, .how-command-canvas { animation: canvas-hover 6s var(--ease-in-out) infinite alternate; }
+  .visual-radar { animation: radar-breathe 3.6s var(--ease-in-out) infinite; }
+  .visual-radar b { animation: radar-sweep 4.8s linear infinite; }
+  .visual-radar em, .visual-live, .visual-footer i, .hero-note span, .how-hero__signal span, .how-command-canvas__legend i, .how-loop__number i { animation: status-pulse 2.2s var(--ease-out) infinite; }
+  .visual-signal { animation: signal-float 4.6s var(--ease-in-out) infinite alternate; }
+  .visual-signal--two { animation-delay: .7s; }
+  .visual-signal--three { animation-delay: 1.25s; }
+  .how-command-canvas::before { animation: ring-rotate 18s linear infinite; }
+  .how-command-canvas__core, .features-channels-canvas__core { animation: core-pulse 3.3s var(--ease-in-out) infinite; }
+  .how-command-canvas__node { animation: node-hover 4.8s var(--ease-in-out) infinite alternate; }
+  .how-command-canvas__node--two { animation-delay: .8s; }
+  .how-command-canvas__node--three { animation-delay: 1.45s; }
+  .features-channels-canvas::before { animation: channel-ring-rotate 22s linear infinite; }
+  .features-channels-canvas__node { animation: channel-drift 5.4s var(--ease-in-out) infinite alternate; }
+  .features-channels-canvas__node--02, .features-channels-canvas__node--06 { animation-name: channel-centered-drift; }
+  .features-channels-canvas__node--02, .features-channels-canvas__node--05 { animation-delay: .6s; }
+  .features-channels-canvas__node--03, .features-channels-canvas__node--06 { animation-delay: 1.2s; }
+  .features-channels-canvas__node--04, .features-channels-canvas__node--07 { animation-delay: 1.8s; }
+}
+
+@keyframes grid-drift { to { background-position: 58px 58px; } }
+@keyframes ambient-orbit { to { transform: translate3d(-14px,-10px,0) scale(1.045); opacity: .7; } }
+@keyframes canvas-hover { to { transform: translate3d(0,-6px,0); } }
+@keyframes radar-breathe { 50% { opacity: .76; transform: translate(-50%,-50%) scale(1.045); } }
+@keyframes radar-sweep { from { transform: rotate(-45deg); } to { transform: rotate(315deg); } }
+@keyframes status-pulse { 50% { opacity: .58; box-shadow: 0 0 0 9px rgba(255,109,90,.08); } }
+@keyframes signal-float { to { transform: translate3d(0,-8px,0); } }
+@keyframes ring-rotate { to { transform: rotate(360deg); } }
+@keyframes channel-ring-rotate { to { transform: translate(-50%,-50%) rotate(360deg); } }
+@keyframes core-pulse { 50% { box-shadow: 0 0 0 18px rgba(255,109,90,.07); } }
+@keyframes node-hover { to { transform: translate3d(0,-6px,0); } }
+@keyframes channel-drift { to { transform: translate3d(0,-5px,0); } }
+@keyframes channel-centered-drift { to { transform: translate3d(-50%,-5px,0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero *, .how-hero *, .features-channels-section * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}

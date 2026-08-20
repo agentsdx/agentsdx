@@ -126,4 +126,7 @@
 - [x] Ensure a fresh mobile Contact-page load with #demo-booking resolves to the demo section, then verify the responsive anchor destination.
 - [x] Confirm a fresh mobile /contact#demo-booking page load lands at the demo booking section before saving the Contact navigation checkpoint.
 - [x] Perform and document a true fresh mobile-width /contact#demo-booking load before checkpointing the Contact navigation change.
-- [ ] Confirm the fresh mobile verification note is recorded, then checkpoint the completed Contact demo-section navigation change.
+- [x] Confirm the fresh mobile verification note is recorded, then checkpoint the completed Contact demo-section navigation change.
+- [x] Add a restrained premium CSS motion layer to the Home, Features, and How It Works visual surfaces.
+- [x] Animate signal paths, status indicators, network nodes, and selected section reveals without introducing video-heavy or distracting behavior.
+- [x] Respect reduced-motion preferences, add regression coverage, and verify the animated experience at desktop and mobile widths.

@@ -117,6 +117,12 @@ The interaction was then verified under true mobile device metrics (**375px × 8
 
 Finally, a **fresh direct mobile load** of `/contact#demo-booking` was measured after the fragment-load enhancement. At true 375px × 812px device metrics, the page retained `#demo-booking`, loaded at `scrollY: 1787`, and placed the demo booking section approximately `92px` below the viewport top. This independently verifies both the live click path and the direct responsive fragment destination.
 
+## Premium interface motion — 20 August 2026
+
+The Home, Features, and How It Works visual surfaces now include a restrained motion layer that reinforces the active-workforce theme without introducing heavy video assets. Motion-safe visitors see slow grid drift, ambient orbital movement, radar sweeps, live-status pulses, gently floating signal and command nodes, and subtle connected-channel network activity. The implementation animates only transform, opacity, background position, and box-shadow accents.
+
+Desktop and 375px mobile previews for all three pages retain the existing hierarchy, readability, and responsive layouts. In a live browser, the Home Signal Room reported active `radar-breathe` and `signal-float` animations. A `prefers-reduced-motion: reduce` override stops the non-essential animation sequence, and a regression contract covers both the motion-safe and reduced-motion paths.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

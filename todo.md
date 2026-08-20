@@ -134,3 +134,6 @@
 - [x] Expand the Terms of Service into a professionally structured working draft covering service access, accounts, acceptable use, intellectual property, disclaimers, liability, and governing-law placeholders.
 - [x] Clearly identify both legal pages as working drafts requiring qualified legal review where entity, jurisdiction, or regulatory details are not supplied.
 - [x] Add regression coverage and verify the revised Privacy and Terms pages at desktop and mobile widths.
+- [x] Elevate the Privacy Policy and Terms of Service into more polished, professional legal-document presentations.
+- [x] Display the supplied Terms of Service counsel-review notice exactly and prominently, including all required completion details.
+- [x] Add regression coverage and verify the refined legal pages at desktop and mobile widths.

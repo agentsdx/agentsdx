@@ -129,6 +129,12 @@ The `/privacy-policy` and `/terms-of-service` routes were reviewed in full-page 
 
 The Privacy Policy covers collection, uses, legal bases, sharing, retention, security, transfers, choices, cookies, children, updates, and a privacy contact route. The Terms of Service covers acceptance, accounts, subscriptions, acceptable use, customer data and AI-assisted output, intellectual property, integrations, availability, confidentiality, disclaimers, liability, indemnity, suspension, and governing-law placeholders. At 375px, the document index reflows before the content, notices remain prominent, and long sections preserve readable line length without horizontal overflow.
 
+## Refined legal-document presentation — 20 August 2026
+
+The Privacy Policy and Terms of Service were further refined with formal document controls in the hero, a dedicated counsel-completion panel, and a document-overview treatment within the substantive content. At desktop and 375px mobile widths, the review panel is clearly visible without competing with the document title, and the supporting completion checklist remains readable.
+
+The Terms hero now prominently displays the exact required notice: **“Working draft — legal review required. This page must be reviewed and completed by qualified counsel before publication. It requires the final contracting entity, jurisdiction, payment terms, service commitments, limitation amounts, dispute process, and customer-agreement hierarchy.”** The corresponding Terms-specific completion fields appear directly below it, so the legally incomplete elements are clear before readers reach the working draft.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

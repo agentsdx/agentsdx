@@ -164,10 +164,13 @@ describe("Agents DX keyboard accessibility contract", () => {
       "Limitation of liability",
       "Governing law and disputes",
       "cs@AgentsDX.com",
+      "This page must be reviewed and completed by qualified counsel before publication. It requires the final contracting entity, jurisdiction, payment terms, service commitments, limitation amounts, dispute process, and customer-agreement hierarchy.",
     ].forEach(label => expect(marketingPages).toContain(label));
     expect(styles).toContain(".legal-hero");
+    expect(styles).toContain(".legal-hero__review");
     expect(styles).toContain(".legal-page__nav");
     expect(styles).toContain(".legal-page__document");
+    expect(styles).toContain(".legal-page__document-header");
   });
 
   it("provides the approved comprehensive Features-page reference without white-label or agency-reseller positioning", () => {

@@ -34,6 +34,17 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(styles).toContain("#demo-booking { scroll-margin-top: 92px; }");
   });
 
+  it("opens an accessible Live Chat channel chooser with placeholder destinations until supplied links are available", () => {
+    expect(contactDirectory).toContain('aria-haspopup="dialog"');
+    expect(contactDirectory).toContain('role="dialog"');
+    expect(contactDirectory).toContain('aria-modal="true"');
+    expect(contactDirectory).toContain('aria-label="Close live chat channel chooser"');
+    expect(contactDirectory).toContain('if (event.key === "Escape") setLiveChatOpen(false)');
+    ["WhatsApp", "Instagram", "Messenger", "Telegram", "Link pending"].forEach(label => expect(contactDirectory).toContain(label));
+    expect(styles).toContain(".live-chat-dialog");
+    expect(styles).toContain(".live-chat-channel--whatsapp");
+  });
+
   it("maintains a visible keyboard focus treatment for links, controls, and form fields", () => {
     expect(styles).toContain(":focus-visible");
     expect(styles).toContain("outline: 3px solid var(--coral)");

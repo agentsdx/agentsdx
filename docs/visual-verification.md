@@ -135,6 +135,12 @@ The Privacy Policy and Terms of Service were further refined with formal documen
 
 The Terms hero now prominently displays the exact required notice: **“Working draft — legal review required. This page must be reviewed and completed by qualified counsel before publication. It requires the final contracting entity, jurisdiction, payment terms, service commitments, limitation amounts, dispute process, and customer-agreement hierarchy.”** The corresponding Terms-specific completion fields appear directly below it, so the legally incomplete elements are clear before readers reach the working draft.
 
+## Contact Live Chat channel chooser — 20 August 2026
+
+The Contact-page Live Chat pathway now opens an original in-page channel chooser. The dialog introduces the agents DX live channel desk and presents **WhatsApp, Instagram, Messenger, and Telegram** in separate branded channel surfaces. Each connection is explicitly marked **Link pending**, consistent with the user’s instruction that final destinations will be supplied later.
+
+Live-browser verification confirms that the dialog opens with a labelled close control, uses a modal accessibility contract, locks background scroll, and includes an email alternative. The desktop review shows a clear focused hierarchy and readable channel details. At true 375px × 812px mobile metrics, the four channel choices stack cleanly within a 615px dialog, with the close control and email alternative remaining visible and no viewport overflow.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

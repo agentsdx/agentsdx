@@ -1,5 +1,6 @@
-import { ArrowRight, CalendarDays, Mail, MessageCircle } from "lucide-react";
-import { useLayoutEffect } from "react";
+import { ArrowRight, CalendarDays, Mail, MessageCircle, X } from "lucide-react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { FaFacebookMessenger, FaInstagram, FaTelegram, FaWhatsapp } from "react-icons/fa6";
 import { MarketingLayout, PageHero, openBookingFrame } from "@/components/marketing/SiteShell";
 
 const bookingOptions = [
@@ -23,11 +24,36 @@ const bookingOptions = [
   },
 ] as const;
 
+const liveChatChannels = [
+  { name: "WhatsApp", detail: "Continue in your preferred business chat", icon: FaWhatsapp, tone: "whatsapp" },
+  { name: "Instagram", detail: "Start a conversation in direct messages", icon: FaInstagram, tone: "instagram" },
+  { name: "Messenger", detail: "Open a connected support conversation", icon: FaFacebookMessenger, tone: "messenger" },
+  { name: "Telegram", detail: "Choose a focused real-time chat thread", icon: FaTelegram, tone: "telegram" },
+] as const;
+
 export function ContactDirectoryPage() {
+  const [liveChatOpen, setLiveChatOpen] = useState(false);
+  const liveChatTriggerRef = useRef<HTMLButtonElement>(null);
+  const liveChatCloseRef = useRef<HTMLButtonElement>(null);
   useLayoutEffect(() => {
     if (window.location.hash !== "#demo-booking") return;
     document.getElementById("demo-booking")?.scrollIntoView({ behavior: "auto", block: "start" });
   }, []);
+
+  useEffect(() => {
+    if (!liveChatOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setLiveChatOpen(false);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    window.setTimeout(() => liveChatCloseRef.current?.focus(), 0);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+      liveChatTriggerRef.current?.focus();
+    };
+  }, [liveChatOpen]);
 
   return (
     <MarketingLayout>
@@ -48,9 +74,9 @@ export function ContactDirectoryPage() {
             <a href="mailto:cs@AgentsDX.com" className="contact-path">
               <span>01</span><Mail size={25} strokeWidth={1.6} /><h3>Email Us</h3><p>Get in touch via email</p><strong>cs@AgentsDX.com</strong><ArrowRight size={17} />
             </a>
-            <article className="contact-path contact-path--live">
+            <button ref={liveChatTriggerRef} type="button" className="contact-path contact-path--live" aria-haspopup="dialog" aria-expanded={liveChatOpen} onClick={() => setLiveChatOpen(true)}>
               <span>02</span><MessageCircle size={25} strokeWidth={1.6} /><h3>Live Chat</h3><p>Chat with our support team</p><strong>Available 24/7</strong><i aria-label="Support availability indicator" /><small>Live-chat entry point is available in the agents DX application.</small>
-            </article>
+            </button>
             <a href="#demo-booking" className="contact-path" aria-label="Schedule a Call: scroll to demo booking options" onClick={(event) => { event.preventDefault(); document.getElementById("demo-booking")?.scrollIntoView({ behavior: "smooth", block: "start" }); window.history.replaceState(null, "", "#demo-booking"); }}>
               <span>03</span><CalendarDays size={25} strokeWidth={1.6} /><h3>Schedule a Call</h3><p>Book a demo with our experts</p><strong>Choose a booking path below</strong><ArrowRight size={17} />
             </a>
@@ -92,6 +118,20 @@ export function ContactDirectoryPage() {
           </div>
         </div>
       </section>
+
+      {liveChatOpen && <div className="live-chat-dialog__backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) setLiveChatOpen(false); }}>
+        <section className="live-chat-dialog" role="dialog" aria-modal="true" aria-labelledby="live-chat-dialog-title" aria-describedby="live-chat-dialog-description" tabIndex={-1}>
+          <div className="live-chat-dialog__top"><p><i /> Live channel desk</p><button ref={liveChatCloseRef} type="button" aria-label="Close live chat channel chooser" onClick={() => setLiveChatOpen(false)}><X size={20} /></button></div>
+          <h2 id="live-chat-dialog-title">Pick the channel that <em>fits your conversation.</em></h2>
+          <p id="live-chat-dialog-description">When the final connections are configured, your agents DX conversation can begin in the channel your team already uses.</p>
+          <div className="live-chat-dialog__channels">
+            {liveChatChannels.map(({ name, detail, icon: Icon, tone }) => <div key={name} className={`live-chat-channel live-chat-channel--${tone}`} aria-label={`${name}: connection link pending`}>
+              <span className="live-chat-channel__icon"><Icon aria-hidden="true" /></span><span><strong>{name}</strong><small>{detail}</small></span><b>Link pending</b>
+            </div>)}
+          </div>
+          <div className="live-chat-dialog__foot"><i /> Destination links will be activated here as soon as your channel accounts are ready. <a href="mailto:cs@AgentsDX.com">Prefer email?</a></div>
+        </section>
+      </div>}
     </MarketingLayout>
   );
 }

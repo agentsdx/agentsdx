@@ -137,3 +137,7 @@
 - [x] Elevate the Privacy Policy and Terms of Service into more polished, professional legal-document presentations.
 - [x] Display the supplied Terms of Service counsel-review notice exactly and prominently, including all required completion details.
 - [x] Add regression coverage and verify the refined legal pages at desktop and mobile widths.
+- [x] Review the supplied live-chat reference interaction as inspiration only; do not copy its code, assets, or copy.
+- [x] Make the Contact-page Live Chat pathway open an accessible original agents DX channel-selection pop-up.
+- [x] Present WhatsApp, Instagram, Messenger, and Telegram as clearly labelled non-navigating placeholders until final links are supplied.
+- [x] Add regression coverage and verify the Live Chat pop-up at desktop and mobile widths.

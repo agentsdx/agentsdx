@@ -120,16 +120,15 @@ export function ContactDirectoryPage() {
       </section>
 
       {liveChatOpen && <div className="live-chat-dialog__backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) setLiveChatOpen(false); }}>
-        <section className="live-chat-dialog" role="dialog" aria-modal="true" aria-labelledby="live-chat-dialog-title" aria-describedby="live-chat-dialog-description" tabIndex={-1}>
+        <section className="live-chat-dialog live-chat-dialog--compact" role="dialog" aria-modal="true" aria-labelledby="live-chat-dialog-title" aria-describedby="live-chat-dialog-description" tabIndex={-1}>
           <div className="live-chat-dialog__top"><p><i /> Live channel desk</p><button ref={liveChatCloseRef} type="button" aria-label="Close live chat channel chooser" onClick={() => setLiveChatOpen(false)}><X size={20} /></button></div>
-          <h2 id="live-chat-dialog-title">Pick the channel that <em>fits your conversation.</em></h2>
-          <p id="live-chat-dialog-description">When the final connections are configured, your agents DX conversation can begin in the channel your team already uses.</p>
+          <h2 id="live-chat-dialog-title">Choose your <em>conversation channel.</em></h2>
+          <p id="live-chat-dialog-description">Connect with our team in the conversation space that works best for you.</p>
           <div className="live-chat-dialog__channels">
-            {liveChatChannels.map(({ name, detail, icon: Icon, tone }) => <div key={name} className={`live-chat-channel live-chat-channel--${tone}`} aria-label={`${name}: connection link pending`}>
-              <span className="live-chat-channel__icon"><Icon aria-hidden="true" /></span><span><strong>{name}</strong><small>{detail}</small></span><b>Link pending</b>
+            {liveChatChannels.map(({ name, detail, icon: Icon, tone }) => <div key={name} className={`live-chat-channel live-chat-channel--${tone}`} aria-label={`${name} channel option`}>
+              <span className="live-chat-channel__icon"><Icon aria-hidden="true" /></span><span><strong>{name}</strong><small>{detail}</small></span>
             </div>)}
           </div>
-          <div className="live-chat-dialog__foot"><i /> Destination links will be activated here as soon as your channel accounts are ready. <a href="mailto:cs@AgentsDX.com">Prefer email?</a></div>
         </section>
       </div>}
     </MarketingLayout>

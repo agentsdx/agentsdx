@@ -141,6 +141,12 @@ The Contact-page Live Chat pathway now opens an original in-page channel chooser
 
 Live-browser verification confirms that the dialog opens with a labelled close control, uses a modal accessibility contract, locks background scroll, and includes an email alternative. The desktop review shows a clear focused hierarchy and readable channel details. At true 375px × 812px mobile metrics, the four channel choices stack cleanly within a 615px dialog, with the close control and email alternative remaining visible and no viewport overflow.
 
+## Compact Live Chat chooser refinement — 20 August 2026
+
+The Live Chat chooser has been reduced in size and simplified as requested. It now uses a 500px desktop maximum width and a 499px true-mobile dialog height at 375px × 812px, down from the previous 615px mobile presentation. The four branded channel rows remain fully readable with a compact icon, name, and one-line description.
+
+The repeated **Link pending** labels and the destination-links notice have been removed completely. A live desktop interaction confirms a compact 555px dialog height with neither provisional string present in the dialog, while the true-mobile capture confirms the streamlined stacked layout remains comfortably within the viewport.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

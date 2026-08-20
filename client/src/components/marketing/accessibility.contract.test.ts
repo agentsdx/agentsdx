@@ -34,13 +34,15 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(styles).toContain("#demo-booking { scroll-margin-top: 92px; }");
   });
 
-  it("opens an accessible Live Chat channel chooser with placeholder destinations until supplied links are available", () => {
+  it("opens an accessible compact Live Chat channel chooser without provisional destination-status copy", () => {
     expect(contactDirectory).toContain('aria-haspopup="dialog"');
     expect(contactDirectory).toContain('role="dialog"');
     expect(contactDirectory).toContain('aria-modal="true"');
     expect(contactDirectory).toContain('aria-label="Close live chat channel chooser"');
     expect(contactDirectory).toContain('if (event.key === "Escape") setLiveChatOpen(false)');
-    ["WhatsApp", "Instagram", "Messenger", "Telegram", "Link pending"].forEach(label => expect(contactDirectory).toContain(label));
+    ["WhatsApp", "Instagram", "Messenger", "Telegram"].forEach(label => expect(contactDirectory).toContain(label));
+    expect(contactDirectory).not.toContain("Link pending");
+    expect(contactDirectory).not.toContain("Destination links will be activated here");
     expect(styles).toContain(".live-chat-dialog");
     expect(styles).toContain(".live-chat-channel--whatsapp");
   });

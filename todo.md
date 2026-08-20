@@ -141,3 +141,6 @@
 - [x] Make the Contact-page Live Chat pathway open an accessible original agents DX channel-selection pop-up.
 - [x] Present WhatsApp, Instagram, Messenger, and Telegram as clearly labelled non-navigating placeholders until final links are supplied.
 - [x] Add regression coverage and verify the Live Chat pop-up at desktop and mobile widths.
+- [x] Reduce the Live Chat dialog footprint and tighten its channel-chooser spacing.
+- [x] Remove the repeated Link pending labels and the destination-links notice until final channel URLs are provided.
+- [x] Update regression coverage and verify the compact Live Chat dialog at desktop and mobile widths.

@@ -43,7 +43,10 @@ describe("Agents DX keyboard accessibility contract", () => {
     ["WhatsApp", "Instagram", "Messenger", "Telegram"].forEach(label => expect(contactDirectory).toContain(label));
     expect(contactDirectory).not.toContain("Link pending");
     expect(contactDirectory).not.toContain("Destination links will be activated here");
+    expect(contactDirectory).toContain("live-chat-dialog--editorial");
+    expect(contactDirectory).toContain("Choose the <em>conversation route.</em>");
     expect(styles).toContain(".live-chat-dialog");
+    expect(styles).toContain(".live-chat-dialog--editorial");
     expect(styles).toContain(".live-chat-channel--whatsapp");
   });
 

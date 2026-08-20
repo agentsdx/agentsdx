@@ -144,3 +144,7 @@
 - [x] Reduce the Live Chat dialog footprint and tighten its channel-chooser spacing.
 - [x] Remove the repeated Link pending labels and the destination-links notice until final channel URLs are provided.
 - [x] Update regression coverage and verify the compact Live Chat dialog at desktop and mobile widths.
+- [x] Restyle the Contact-page Live Chat pop-up into an original light editorial agents DX dialog inspired by the supplied layout reference.
+- [x] Preserve the four channel choices and agents DX branding while adding a light canvas, clear arrow affordances, and refined dialog hierarchy.
+- [x] Update regression coverage and verify the restyled Live Chat dialog at desktop and mobile widths.
+- [x] Correct the mobile editorial dialog so its complete title remains visible and each channel arrow stays aligned within its row.

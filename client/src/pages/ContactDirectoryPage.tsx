@@ -120,13 +120,13 @@ export function ContactDirectoryPage() {
       </section>
 
       {liveChatOpen && <div className="live-chat-dialog__backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) setLiveChatOpen(false); }}>
-        <section className="live-chat-dialog live-chat-dialog--compact" role="dialog" aria-modal="true" aria-labelledby="live-chat-dialog-title" aria-describedby="live-chat-dialog-description" tabIndex={-1}>
-          <div className="live-chat-dialog__top"><p><i /> Live channel desk</p><button ref={liveChatCloseRef} type="button" aria-label="Close live chat channel chooser" onClick={() => setLiveChatOpen(false)}><X size={20} /></button></div>
-          <h2 id="live-chat-dialog-title">Choose your <em>conversation channel.</em></h2>
-          <p id="live-chat-dialog-description">Connect with our team in the conversation space that works best for you.</p>
+        <section className="live-chat-dialog live-chat-dialog--compact live-chat-dialog--editorial" role="dialog" aria-modal="true" aria-labelledby="live-chat-dialog-title" aria-describedby="live-chat-dialog-description" tabIndex={-1}>
+          <div className="live-chat-dialog__top"><p>agents DX / live chat</p><button ref={liveChatCloseRef} type="button" aria-label="Close live chat channel chooser" onClick={() => setLiveChatOpen(false)}><X size={20} /></button></div>
+          <h2 id="live-chat-dialog-title">Choose the <em>conversation route.</em></h2>
+          <p id="live-chat-dialog-description">Message the agents DX team through a channel that feels familiar to you.</p>
           <div className="live-chat-dialog__channels">
-            {liveChatChannels.map(({ name, detail, icon: Icon, tone }) => <div key={name} className={`live-chat-channel live-chat-channel--${tone}`} aria-label={`${name} channel option`}>
-              <span className="live-chat-channel__icon"><Icon aria-hidden="true" /></span><span><strong>{name}</strong><small>{detail}</small></span>
+            {liveChatChannels.map(({ name, icon: Icon, tone }) => <div key={name} className={`live-chat-channel live-chat-channel--${tone}`} aria-label={`${name} live chat channel`}>
+              <span className="live-chat-channel__icon"><Icon aria-hidden="true" /></span><strong>{name}</strong><span className="live-chat-channel__arrow" aria-hidden="true">↗</span>
             </div>)}
           </div>
         </section>

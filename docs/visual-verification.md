@@ -147,6 +147,12 @@ The Live Chat chooser has been reduced in size and simplified as requested. It n
 
 The repeated **Link pending** labels and the destination-links notice have been removed completely. A live desktop interaction confirms a compact 555px dialog height with neither provisional string present in the dialog, while the true-mobile capture confirms the streamlined stacked layout remains comfortably within the viewport.
 
+## Light editorial Live Chat dialog — 20 August 2026
+
+The Contact Live Chat chooser was restyled as an original light editorial agents DX dialog, using a soft white-to-blue canvas, a slim coral signal edge, a dark high-contrast headline, individually surfaced channel rows, and coral arrow affordances. The reference informs only the high-level modal hierarchy; all agents DX copy, colour treatment, content, and interaction remain original.
+
+At true 375px × 812px mobile metrics, the corrected dialog is 502px high, keeps the full **“Choose the conversation route.”** title visible, and holds each arrow within its respective channel row. Live desktop verification confirms a 580px dialog with all four channels present, a light gradient background, an accessible close control, a dark title color, and aligned arrows at consistent row positions.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

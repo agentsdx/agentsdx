@@ -150,3 +150,6 @@
 - [x] Correct the mobile editorial dialog so its complete title remains visible and each channel arrow stays aligned within its row.
 - [x] Make the backdrop behind the opened Contact-page Live Chat dialog transparent enough to keep the Contact page clearly visible.
 - [x] Set the opened Contact-page Live Chat backdrop to 50% opacity while preserving dialog readability.
+- [x] Add a rounded fixed Live Chat launcher across all public marketing pages using the supplied agents DX icon.
+- [x] Make the global launcher open the existing accessible four-channel chooser and preserve keyboard and mobile support.
+- [x] Add regression coverage and visually verify the global Live Chat launcher on desktop and mobile.

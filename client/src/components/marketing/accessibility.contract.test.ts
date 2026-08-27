@@ -34,20 +34,27 @@ describe("Agents DX keyboard accessibility contract", () => {
     expect(styles).toContain("#demo-booking { scroll-margin-top: 92px; }");
   });
 
-  it("opens an accessible compact Live Chat channel chooser without provisional destination-status copy", () => {
+  it("opens an accessible compact Live Chat channel chooser from the Contact page and global launcher without provisional destination-status copy", () => {
     expect(contactDirectory).toContain('aria-haspopup="dialog"');
-    expect(contactDirectory).toContain('role="dialog"');
-    expect(contactDirectory).toContain('aria-modal="true"');
-    expect(contactDirectory).toContain('aria-label="Close live chat channel chooser"');
-    expect(contactDirectory).toContain('if (event.key === "Escape") setLiveChatOpen(false)');
-    ["WhatsApp", "Instagram", "Messenger", "Telegram"].forEach(label => expect(contactDirectory).toContain(label));
+    expect(contactDirectory).toContain("openLiveChatDialog");
+    expect(siteShell).toContain('className="global-live-chat"');
+    expect(siteShell).toContain('aria-label="Open live chat channel chooser"');
+    expect(siteShell).toContain('aria-expanded={liveChatOpen}');
+    expect(siteShell).toContain("/manus-storage/agentsdx-live-chat-icon_59d2a5ae.png");
+    expect(siteShell).toContain("LIVE_CHAT_EVENT");
+    expect(siteShell).toContain('role="dialog"');
+    expect(siteShell).toContain('aria-modal="true"');
+    expect(siteShell).toContain('aria-label="Close live chat channel chooser"');
+    expect(siteShell).toContain('if (event.key === "Escape") setLiveChatOpen(false)');
+    ["WhatsApp", "Instagram", "Messenger", "Telegram"].forEach(label => expect(siteShell).toContain(label));
     expect(contactDirectory).not.toContain("Link pending");
     expect(contactDirectory).not.toContain("Destination links will be activated here");
-    expect(contactDirectory).toContain("live-chat-dialog--editorial");
-    expect(contactDirectory).toContain("Choose the <em>conversation route.</em>");
+    expect(siteShell).toContain("live-chat-dialog--editorial");
+    expect(siteShell).toContain("Choose the <em>conversation route.</em>");
     expect(styles).toContain(".live-chat-dialog");
     expect(styles).toContain(".live-chat-dialog--editorial");
     expect(styles).toContain(".live-chat-channel--whatsapp");
+    expect(styles).toContain(".global-live-chat");
   });
 
   it("maintains a visible keyboard focus treatment for links, controls, and form fields", () => {

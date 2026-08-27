@@ -1,6 +1,6 @@
 import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
-import { useEffect, useState, type ReactNode } from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaSnapchat, FaTiktok, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
+import { FaFacebookF, FaFacebookMessenger, FaInstagram, FaLinkedinIn, FaPinterestP, FaSnapchat, FaTelegram, FaTiktok, FaWhatsapp, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { Link, useLocation } from "wouter";
 import { BrandMark } from "./BrandMark";
 import { bootstrapCalEmbed, configureDedicatedManagerCal, configurePlatformCal } from "@/lib/calEmbed";
@@ -15,9 +15,21 @@ const navItems = [
 
 type BookingFrameRequest = { title: string; href: string; label?: string };
 const BOOKING_EVENT = "agentsdx:open-booking-frame";
+const LIVE_CHAT_EVENT = "agentsdx:open-live-chat";
+
+const liveChatChannels = [
+  { name: "WhatsApp", icon: FaWhatsapp, tone: "whatsapp" },
+  { name: "Instagram", icon: FaInstagram, tone: "instagram" },
+  { name: "Messenger", icon: FaFacebookMessenger, tone: "messenger" },
+  { name: "Telegram", icon: FaTelegram, tone: "telegram" },
+] as const;
 
 export function openBookingFrame(request: BookingFrameRequest) {
   window.dispatchEvent(new CustomEvent<BookingFrameRequest>(BOOKING_EVENT, { detail: request }));
+}
+
+export function openLiveChatDialog() {
+  window.dispatchEvent(new CustomEvent(LIVE_CHAT_EVENT));
 }
 
 function BookingFrameDialog({ booking, onClose }: { booking: BookingFrameRequest; onClose: () => void }) {
@@ -38,6 +50,23 @@ function BookingFrameDialog({ booking, onClose }: { booking: BookingFrameRequest
         <iframe title={`${booking.title} booking calendar`} src={booking.href} allow="camera; microphone; fullscreen" />
         <p className="cal-frame-dialog__fallback">Need a full browser view? <a href={booking.href} target="_blank" rel="noreferrer">Open the calendar in a new tab</a>.</p>
       </div>
+    </div>
+  );
+}
+
+function LiveChatDialog({ onClose, closeButtonRef }: { onClose: () => void; closeButtonRef: RefObject<HTMLButtonElement | null> }) {
+  return (
+    <div className="live-chat-dialog__backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) onClose(); }}>
+      <section className="live-chat-dialog live-chat-dialog--compact live-chat-dialog--editorial" role="dialog" aria-modal="true" aria-labelledby="live-chat-dialog-title" aria-describedby="live-chat-dialog-description" tabIndex={-1}>
+        <div className="live-chat-dialog__top"><p>agents DX / live chat</p><button ref={closeButtonRef} type="button" aria-label="Close live chat channel chooser" onClick={onClose}><X size={20} /></button></div>
+        <h2 id="live-chat-dialog-title">Choose the <em>conversation route.</em></h2>
+        <p id="live-chat-dialog-description">Message the agents DX team through a channel that feels familiar to you.</p>
+        <div className="live-chat-dialog__channels">
+          {liveChatChannels.map(({ name, icon: Icon, tone }) => <div key={name} className={`live-chat-channel live-chat-channel--${tone}`} aria-label={`${name} live chat channel`}>
+            <span className="live-chat-channel__icon"><Icon aria-hidden="true" /></span><strong>{name}</strong><span className="live-chat-channel__arrow" aria-hidden="true">↗</span>
+          </div>)}
+        </div>
+      </section>
     </div>
   );
 }
@@ -255,6 +284,9 @@ export function FinalCta({ title = <>Ready to turn every signal into <em>forward
 
 export function MarketingLayout({ children }: { children: ReactNode }) {
   const [bookingFrame, setBookingFrame] = useState<BookingFrameRequest | null>(null);
+  const [liveChatOpen, setLiveChatOpen] = useState(false);
+  const liveChatCloseRef = useRef<HTMLButtonElement>(null);
+  const liveChatReturnFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const cal = bootstrapCalEmbed();
@@ -268,5 +300,32 @@ export function MarketingLayout({ children }: { children: ReactNode }) {
     return () => window.removeEventListener(BOOKING_EVENT, openFrame);
   }, []);
 
-  return <><SiteHeader /><main>{children}</main><SiteFooter />{bookingFrame && <BookingFrameDialog booking={bookingFrame} onClose={() => setBookingFrame(null)} />}</>;
+  useEffect(() => {
+    const openLiveChat = () => {
+      liveChatReturnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      setLiveChatOpen(true);
+    };
+    window.addEventListener(LIVE_CHAT_EVENT, openLiveChat);
+    return () => window.removeEventListener(LIVE_CHAT_EVENT, openLiveChat);
+  }, []);
+
+  useEffect(() => {
+    if (!liveChatOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") setLiveChatOpen(false); };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    window.setTimeout(() => liveChatCloseRef.current?.focus(), 0);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+      liveChatReturnFocusRef.current?.focus();
+    };
+  }, [liveChatOpen]);
+
+  const handleLauncherClick = () => {
+    liveChatReturnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    setLiveChatOpen(true);
+  };
+
+  return <><SiteHeader /><main>{children}</main><SiteFooter /><button type="button" className="global-live-chat" aria-label="Open live chat channel chooser" aria-haspopup="dialog" aria-expanded={liveChatOpen} onClick={handleLauncherClick}><img src="/manus-storage/agentsdx-live-chat-icon_59d2a5ae.png" alt="" /></button>{bookingFrame && <BookingFrameDialog booking={bookingFrame} onClose={() => setBookingFrame(null)} />}{liveChatOpen && <LiveChatDialog closeButtonRef={liveChatCloseRef} onClose={() => setLiveChatOpen(false)} />}</>;
 }

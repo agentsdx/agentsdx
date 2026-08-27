@@ -161,6 +161,12 @@ A live desktop browser check confirms that the dialog opens with all four channe
 
 The desktop visual capture confirms the intended balance: the Contact-page heading, operating-context panel, and contact pathways remain discernible through the 50% overlay, while the channel chooser remains the unmistakable active surface.
 
+## Global rounded Live Chat launcher — 27 August 2026
+
+The supplied agents DX icon is now presented as a rounded fixed Live Chat launcher throughout the shared marketing layout. A live Features-page verification confirms that the control is present outside the Contact route and opens the same accessible four-channel chooser. The launcher remains beneath the active dialog layer, while the 50% overlay keeps the page context visible behind the opaque editorial panel.
+
+Mobile viewport captures at **375px × 812px** for Home and Contact confirm that the launcher reduces to a 56px circular control, remains visually distinct above both light and dark page surfaces, and does not block the primary hero actions or mobile navigation. Automated coverage confirms the global launcher label, supplied hosted icon, dialog semantics, keyboard dismissal, and shared four-channel chooser; the full suite reports **31 passing tests** with a clean TypeScript check.
+
 ### Complete route-by-route verification matrix
 
 | Route | Desktop 1280px | Mobile 390px | Result |

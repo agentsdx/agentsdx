@@ -7,9 +7,5 @@
 - [x] Audit the frontend for static-build compatibility and identify required route fallback for shared hosting.
 - [x] Create a static-host deployment guide for MakersHost (FTP/File Manager upload).
 - [x] Prepare a static-only production package for MakersHost shared hosting (`agents-dx-static-makershost.zip`).
-- [x] Inspect the local static package and common Apache 403 causes to prepare troubleshooting steps.
-- [ ] Verify the actual MakersHost deployment location and confirm `index.html` and `.htaccess` are in the live document root.
-- [ ] Confirm in the user’s cPanel that hidden files are visible and `.htaccess` exists after extraction.
-- [ ] Confirm deployed file and directory permissions on MakersHost (e.g. files 644, folders 755).
 - [ ] Connect www.agentsdx.com DNS and SSL for the static site.
 

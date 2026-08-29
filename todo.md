@@ -153,3 +153,8 @@
 - [x] Add a rounded fixed Live Chat launcher across all public marketing pages using the supplied agents DX icon.
 - [x] Make the global launcher open the existing accessible four-channel chooser and preserve keyboard and mobile support.
 - [x] Add regression coverage and visually verify the global Live Chat launcher on desktop and mobile.
+- [ ] Verify the MakersHost account supports a Node.js application manager, production Node process, environment variables, and a MySQL-compatible database.
+- [ ] Create a MakersHost shared-hosting deployment guide for the current agents DX React/Express/tRPC build.
+- [ ] Prepare a MakersHost-ready production package only after the hosting plan requirements are confirmed.
+- [ ] Connect www.agentsdx.com DNS and SSL after the user confirms the hosting control panel and provides the required account-side details.
+
